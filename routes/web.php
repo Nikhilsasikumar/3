@@ -28,3 +28,47 @@ Route::get('/about', function () {
 
 Route::get('/product/{product}', 'ProductsController@show');
 Route::get('/service/{service}', 'ServicesController@show');
+
+Route::get('/admin/index', function () {
+    return view('admin.app');
+});
+
+Route::get('/admin/profile', function () {
+    return view('admin.profile');
+});
+
+Route::get('/admin/enquery_products', function () {
+    return view('admin.enquery_products');
+});
+
+Route::get('/admin/products', function () {
+    return view('admin.products');
+});
+
+Route::get('/admin/products/table', function () {
+    return view('admin.products_table');
+});
+
+
+//services
+Route::get('/admin/enquery_services', function () {
+    return view('admin.enquery_services');
+});
+
+Route::get('/admin/services', function () {
+    return view('admin.services');
+});
+
+Route::get('/admin/services/table', function () {
+    return view('admin.services_table');
+});
+
+//provider
+
+Route::get('/admin/provider', function () {
+    return view('admin.provider');
+});
+
+Route::get('/admin/provider/table', function () {
+    return view('admin.provider_table');
+});
