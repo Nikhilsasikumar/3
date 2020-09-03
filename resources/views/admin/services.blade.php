@@ -35,7 +35,8 @@
 <!--begin::Row-->
 <div class="row">
 
-
+    @if(count($service)>0)
+    @foreach($service as $ser)
 
     <div class="col-lg-6 col-xl-4 mb-5">
         <!--begin::Iconbox-->
@@ -56,11 +57,8 @@
                         </span>
                     </div>
                     <div class="d-flex flex-column">
-                        <a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3">Get
-                            Started</a>
-                        <div class="text-dark-75">Lorem Ipsum is simply dummy text of the
-                            printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy since the 1500s.</div>
+                        <a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3">{{$ser->service_name}}</a>
+                        <div class="text-dark-75">{{$ser->service_disc}}</div>
                     </div>
                 </div>
             </div>
@@ -76,27 +74,7 @@
                 <div class="example-highlight">
                     <pre>
 <code class="language-html">
-&lt;div class="card card-custom wave wave-animate-slow wave-primary mb-8 mb-lg-0"&gt;
-&lt;div class="card-body"&gt;
-&lt;div class="d-flex align-items-center p-5"&gt;
-&lt;div class="mr-6"&gt;
-&lt;span class="svg-icon svg-icon-success svg-icon-4x"&gt;
-&lt;svg&gt;
-...
-&lt;/svg&gt;
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="d-flex flex-column"&gt;
-&lt;a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3"&gt;
-Get Started
-&lt;/a&gt;
-&lt;div class="text-dark-75"&gt;
-...
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+
 </code>
 </pre>
                 </div>
@@ -104,14 +82,19 @@ Get Started
         </div>
         <!--end::Code example-->
     </div>
-    <div class="col-lg-6 col-xl-4 mb-5">
-        <!--begin::Iconbox-->
+    @endforeach
+    @else
+    <h1>No Services Listed</h1>
+    @endif
+
+
+
+    <!-- <div class="col-lg-6 col-xl-4 mb-5">
         <div class="card card-custom wave wave-animate wave-danger mb-8 mb-lg-0">
             <div class="card-body">
                 <div class="d-flex align-items-center p-5">
                     <div class="mr-6">
                         <span class="svg-icon svg-icon-danger svg-icon-4x">
-                            <!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/General/Thunder-move.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
@@ -119,7 +102,6 @@ Get Started
                                     <path d="M4.5,5 L9.5,5 C10.3284271,5 11,5.67157288 11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L4.5,8 C3.67157288,8 3,7.32842712 3,6.5 C3,5.67157288 3.67157288,5 4.5,5 Z M4.5,17 L9.5,17 C10.3284271,17 11,17.6715729 11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L4.5,20 C3.67157288,20 3,19.3284271 3,18.5 C3,17.6715729 3.67157288,17 4.5,17 Z M2.5,11 L6.5,11 C7.32842712,11 8,11.6715729 8,12.5 C8,13.3284271 7.32842712,14 6.5,14 L2.5,14 C1.67157288,14 1,13.3284271 1,12.5 C1,11.6715729 1.67157288,11 2.5,11 Z" fill="#000000" opacity="0.3" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
                     </div>
                     <div class="d-flex flex-column">
@@ -131,8 +113,6 @@ Get Started
                 </div>
             </div>
         </div>
-        <!--end::Iconbox-->
-        <!--begin::Code example-->
         <div class="example example-compact mt-2">
             <div class="example-tools">
                 <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -141,43 +121,18 @@ Get Started
             <div class="example-code">
                 <div class="example-highlight">
                     <pre>
-<code class="language-html">
-&lt;div class="card card-custom wave wave-animate wave-danger mb-8 mb-lg-0"&gt;
-&lt;div class="card-body"&gt;
-&lt;div class="d-flex align-items-center p-5"&gt;
-&lt;div class="mr-6"&gt;
-&lt;span class="svg-icon svg-icon-danger svg-icon-4x"&gt;
-&lt;svg&gt;
-...
-&lt;/svg&gt;
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="d-flex flex-column"&gt;
-&lt;a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3"&gt;
-Tutorials
-&lt;/a&gt;
-&lt;div class="text-dark-75"&gt;
-...
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code>
+
 </pre>
                 </div>
             </div>
         </div>
-        <!--end::Code example-->
     </div>
     <div class="col-lg-6 col-xl-4">
-        <!--begin::Iconbox-->
         <div class="card card-custom wave wave-animate-fast wave-success">
             <div class="card-body">
                 <div class="d-flex align-items-center p-5">
                     <div class="mr-6">
                         <span class="svg-icon svg-icon-success svg-icon-4x">
-                            <!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Design/Sketch.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
@@ -185,7 +140,6 @@ Tutorials
                                     <polygon fill="#000000" points="23 8 12 20 1 8" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
                     </div>
                     <div class="d-flex flex-column">
@@ -198,8 +152,6 @@ Tutorials
                 </div>
             </div>
         </div>
-        <!--end::Iconbox-->
-        <!--begin::Code example-->
         <div class="example example-compact mt-2">
             <div class="example-tools">
                 <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -208,35 +160,11 @@ Tutorials
             <div class="example-code">
                 <div class="example-highlight">
                     <pre>
-<code class="language-html">
-&lt;div class="card card-custom wave wave-animate-fast wave-success"&gt;
-&lt;div class="card-body"&gt;
-&lt;div class="d-flex align-items-center p-5"&gt;
-&lt;div class="mr-6"&gt;
-&lt;span class="svg-icon svg-icon-success svg-icon-4x"&gt;
-&lt;svg&gt;
-...
-&lt;/svg&gt;
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="d-flex flex-column"&gt;
-&lt;a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3"&gt;
-User Guide
-&lt;/a&gt;
-&lt;div class="text-dark-75"&gt;
-...
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code>
+
 </pre>
                 </div>
             </div>
         </div>
-        <!--end::Code example-->
-    </div>
+    </div> -->
 </div>
-<!--end::Row-->
 @endsection

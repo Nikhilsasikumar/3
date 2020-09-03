@@ -680,6 +680,7 @@
     <script src="/admin/js/pages/widgetsc3e8.js?v=7.0.6"></script>
     <script src="/admin/js/pages/custom/profile/profilec3e8.js?v=7.0.6"></script>
     <!--end::Page Scripts-->
+    @yield("footer_script")
 </body>
 <!--end::Body-->
 

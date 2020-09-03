@@ -29,6 +29,8 @@ Route::get('/about', function () {
 Route::get('/product/{product}', 'ProductsController@show');
 Route::get('/service/{service}', 'ServicesController@show');
 
+
+//admin
 Route::get('/admin/index', function () {
     return view('admin.app');
 });
@@ -55,13 +57,12 @@ Route::get('/admin/enquery_services', function () {
     return view('admin.enquery_services');
 });
 
-Route::get('/admin/services', function () {
-    return view('admin.services');
-});
 
-Route::get('/admin/services/table', function () {
-    return view('admin.services_table');
-});
+Route::get('/admin/services', 'AdminServicesController@index');
+Route::get('/admin/services/table', 'AdminServicesController@service');
+Route::post('/admin/services/table', 'AdminServicesController@store');
+
+
 
 //provider
 
