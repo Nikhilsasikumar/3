@@ -61,6 +61,10 @@ Route::get('/admin/enquery_services', function () {
 Route::get('/admin/services', 'AdminServicesController@index');
 Route::get('/admin/services/table', 'AdminServicesController@service');
 Route::post('/admin/services/table', 'AdminServicesController@store');
+Route::get('/admin/services/table/{id}/edit', 'AdminServicesController@edit');
+Route::put('/admin/services/table/{id}', 'AdminServicesController@update');
+Route::delete('/admin/services/{id}', 'AdminServicesController@destroy');
+
 
 
 

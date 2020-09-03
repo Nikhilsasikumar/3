@@ -77,7 +77,14 @@ class AdminServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        // $blog = service::find($id);
+        // return $blog;
+        // return view('edite', ['blog' => $blog]);
+        if (request()->ajax()) {
+            $data = service::findOrFail($id);
+            return response()->json(['data' => $data]);
+        }
     }
 
     /**
@@ -89,7 +96,13 @@ class AdminServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $service = service::find($id);
+        $service->service_name = request('service_name');
+        $service->service_disc = request('service_disc');
+        $service->service_cate = request('service_cate');
+        // $service->service_photo = request('service_photo');
+        $service->save();
+        return redirect("/admin/services");
     }
 
     /**
@@ -100,6 +113,8 @@ class AdminServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = service::find($id);
+        $service->delete();
+        return redirect("/admin/services");
     }
 }
