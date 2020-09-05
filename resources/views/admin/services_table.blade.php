@@ -14,11 +14,6 @@
 
 @section("page_content")
 
-
-
-
-
-
 <!--begin::Card-->
 <div class="card card-custom">
     <div class="card-header">
@@ -320,7 +315,11 @@
     </div>
 </div>
 @endsection
-
+@section("page_nav")
+<a href="/admin/services" class="btn btn-light-primary btn-sm font-weight-bold mr-2">
+    Back
+</a>
+@endsection
 @section("footer_script")
 
 <script src="/admin/plugins/custom/datatables/datatables.bundlec3e8.js?v=7.0.6"></script>

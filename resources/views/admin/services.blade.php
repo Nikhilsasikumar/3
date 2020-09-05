@@ -168,3 +168,8 @@
     </div> -->
 </div>
 @endsection
+@section("page_nav")
+<a href="/admin/services/table" class="btn btn-light-primary btn-sm font-weight-bold mr-2">
+    Table
+</a>
+@endsection

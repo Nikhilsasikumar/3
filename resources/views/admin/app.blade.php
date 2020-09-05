@@ -260,7 +260,7 @@
                                     </div>
                                     <div class="separator separator-solid"></div>
                                     <div class="navi navi-spacer-x-0 pt-5">
-                                        <a href="custom/apps/user/profile-1/personal-information.html" class="navi-item px-8">
+                                        <a href="/admin/profile" class="navi-item px-8">
                                             <div class="navi-link">
                                                 <div class="navi-icon mr-2">
                                                     <i class="flaticon2-calendar-3 text-success"></i>
@@ -380,7 +380,7 @@
                                 </li>
 
                                 <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-                                    <a href="/admin/provider" class="menu-link">
+                                    <a href="/admin/providers" class="menu-link">
                                         <span class="menu-text">Provider</span>
                                         <span class="menu-desc"></span>
                                         <i class="menu-arrow"></i>
@@ -406,6 +406,11 @@
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+
+                                @yield("page_nav")
+
                             </div>
                         </div>
                         <!--end::Subheader-->

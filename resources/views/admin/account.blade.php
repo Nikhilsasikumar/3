@@ -5,14 +5,15 @@
     <a href="/admin/index" class="text-muted">Dashboard</a>
 </li>
 <li class="breadcrumb-item">
-    <a href="#" class="text-muted">Profile</a>
+    <a href="/admin/profile" class="text-muted">Profile</a>
 </li>
-
+<li class="breadcrumb-item">
+    <a href="#" class="text-muted">Account</a>
+</li>
 @endsection
 
 @section("page_content")
-
-<!--begin::Profile Personal Information-->
+<!--begin::Profile Account Information-->
 <div class="d-flex flex-row">
     <!--begin::Aside-->
     <div class="flex-row-auto offcanvas-mobile w-250px w-xxl-350px" id="kt_profile_aside">
@@ -29,10 +30,6 @@
                         <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                             <!--begin::Navigation-->
                             <ul class="navi navi-hover py-5">
-
-
-
-
 
                                 <li class="navi-item">
                                     <a href="#" class="navi-link">
@@ -86,7 +83,7 @@
                 <div class="navi navi-bold navi-hover navi-active navi-link-rounded">
 
                     <div class="navi-item mb-2">
-                        <a href="#" class="navi-link py-4 active">
+                        <a href="/admin/profile" class="navi-link py-4">
                             <span class="navi-icon mr-2">
                                 <span class="svg-icon">
                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/General/User.svg-->
@@ -100,11 +97,12 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </span>
-                            <span class="navi-text font-size-lg">Personal Information</span>
+                            <span class="navi-text font-size-lg">Personal
+                                Information</span>
                         </a>
                     </div>
                     <div class="navi-item mb-2">
-                        <a href="/admin/profile/account" class="navi-link py-4">
+                        <a href="#" class="navi-link py-4 active">
                             <span class="navi-icon mr-2">
                                 <span class="svg-icon">
                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Code/Compiling.svg-->
@@ -118,7 +116,8 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </span>
-                            <span class="navi-text font-size-lg">Account Information</span>
+                            <span class="navi-text font-size-lg">Account
+                                Information</span>
                         </a>
                     </div>
                     <div class="navi-item mb-2">
@@ -142,7 +141,6 @@
                         </a>
                     </div>
 
-
                 </div>
                 <!--end::Nav-->
             </div>
@@ -154,93 +152,44 @@
     <!--begin::Content-->
     <div class="flex-row-fluid ml-lg-8">
         <!--begin::Card-->
-        <div class="card card-custom card-stretch">
+        <div class="card card-custom">
             <!--begin::Header-->
             <div class="card-header py-3">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">Personal Information
-                    </h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">Update your
-                        personal informaiton</span>
+                    <h3 class="card-label font-weight-bolder text-dark">Account
+                        Information</h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">Change
+                        your account settings</span>
                 </div>
                 <div class="card-toolbar">
-                    <button type="reset" class="btn btn-success mr-2">Save Changes</button>
+                    <button type="reset" class="btn btn-success mr-2">Save
+                        Changes</button>
                     <button type="reset" class="btn btn-secondary">Cancel</button>
                 </div>
             </div>
             <!--end::Header-->
             <!--begin::Form-->
-            <form class="form" method="post" action="/admin/services/table">
-                @csrf
-                <!--begin::Body-->
+            <form class="form">
                 <div class="card-body">
+                    <!--begin::Heading-->
                     <div class="row">
                         <label class="col-xl-3"></label>
                         <div class="col-lg-9 col-xl-6">
-                            <h5 class="font-weight-bold mb-6">Customer Info</h5>
+                            <h5 class="font-weight-bold mb-6">Account:</h5>
                         </div>
                     </div>
+                    <!--begin::Form Group-->
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">Avatar</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Username</label>
                         <div class="col-lg-9 col-xl-6">
-                            <div class="image-input image-input-outline" id="kt_profile_avatar" style="background-image: url(/admin/media/users/blank.png)">
-                                <div class="image-input-wrapper" style="background-image: url(/admin/media/users/300_21.jpg)">
-                                </div>
-                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                    <i class="fa fa-pen icon-sm text-muted"></i>
-                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
-                                    <input type="hidden" name="profile_avatar_remove" />
-                                </label>
-                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                </span>
-                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                </span>
+                            <div class="spinner spinner-sm spinner-success spinner-right">
+                                <input class="form-control form-control-lg form-control-solid" disabled type="text" value="{{$profile->username}}" />
                             </div>
-                            <span class="form-text text-muted">Allowed file types: png, jpg,
-                                jpeg.</span>
                         </div>
                     </div>
+                    <!--begin::Form Group-->
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">First
-                            Name</label>
-                        <div class="col-lg-9 col-xl-6">
-                            <input class="form-control form-control-lg form-control-solid" type="text" name="first_name" value="{{$profile->first_name}}" placeholder="Sachin" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">Last
-                            Name</label>
-                        <div class="col-lg-9 col-xl-6">
-                            <input class="form-control form-control-lg form-control-solid" type="text" name="last_name" value="{{$profile->last_name}}" placeholder="Tendulkar" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label class="col-xl-3"></label>
-                        <div class="col-lg-9 col-xl-6">
-                            <h5 class="font-weight-bold mt-10 mb-6">Contact Info</h5>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">Contact
-                            Phone</label>
-                        <div class="col-lg-9 col-xl-6">
-                            <div class="input-group input-group-lg input-group-solid">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="la la-phone"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control form-control-lg form-control-solid" name="phone" value="{{$profile->phone}}" placeholder="9876543210" />
-                            </div>
-                            <span class="form-text text-muted">We'll never share your email
-                                with anyone else.</span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">Email
+                        <label class="col-xl-3 col-lg-3 col-form-label">Email
                             Address</label>
                         <div class="col-lg-9 col-xl-6">
                             <div class="input-group input-group-lg input-group-solid">
@@ -249,42 +198,81 @@
                                         <i class="la la-at"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control form-control-lg form-control-solid" name="email" value="{{$profile->email}}" placeholder="myemail@gmail.com" />
+                                <input type="text" class="form-control form-control-lg form-control-solid" value="{{$profile->email}}" placeholder="Email" />
+                            </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                    <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Language</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <select class="form-control form-control-lg form-control-solid" disabled>
+
+                                <option value="en" selected="selected">English</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row align-items-center">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Communication</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="checkbox-inline">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked="checked" />
+                                    <span></span>Email</label>
+                                <label class="checkbox">
+                                    <input type="checkbox" checked="checked" />
+                                    <span></span>SMS</label>
+                                <label class="checkbox">
+                                    <input type="checkbox" />
+                                    <span></span>Phone</label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">Location</label>
+                    <!--begin::Form Group-->
+                    <div class="separator separator-dashed my-5"></div>
+                    <!--begin::Form Group-->
+                    <div class="row">
+                        <label class="col-xl-3"></label>
                         <div class="col-lg-9 col-xl-6">
-                            <div class="input-group input-group-lg input-group-solid">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="la la-map-marker-alt"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control form-control-lg form-control-solid" location="location" value="{{$profile->location}}" placeholder="Sulthan Bathery" />
-                            </div>
+                            <h5 class="font-weight-bold mb-6">Security:</h5>
                         </div>
                     </div>
+
+                    <!--begin::Form Group-->
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">Company
-                            Site</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Password reset
+                            verification</label>
                         <div class="col-lg-9 col-xl-6">
-                            <div class="input-group input-group-lg input-group-solid">
-                                <input type="text" class="form-control form-control-lg form-control-solid" disabled placeholder="mysite" value="boatfmc" />
-                                <div class="input-group-append">
-                                    <span class="input-group-text">.com</span>
-                                </div>
+                            <div class="checkbox-inline">
+                                <label class="checkbox m-0">
+                                    <input type="checkbox" />
+                                    <span></span>Require personal information to reset
+                                    your password.</label>
                             </div>
+                            <p class="form-text text-muted py-2">For extra security,
+                                this requires you to confirm your email or phone number
+                                when you reset your password.
+                                <a href="#" class="font-weight-boldk">Learn more</a>.
+                            </p>
+                            <button type="button" class="btn btn-light-danger font-weight-bold btn-sm">Deactivate
+                                your account ?</button>
                         </div>
                     </div>
                 </div>
-                <!--end::Body-->
             </form>
             <!--end::Form-->
         </div>
+        <!--end::Card-->
     </div>
     <!--end::Content-->
+
+    <!--end::Profile Account Information-->
 </div>
-<!--end::Profile Personal Information-->
+<!--end::Content-->
 @endsection
