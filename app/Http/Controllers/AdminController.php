@@ -94,7 +94,7 @@ class AdminController extends Controller
         $admin->location = request('location');
         // $product->product_photo = request('product_photo');
         $admin->save();
-        return redirect("/admin/products/table");
+        return redirect("/admin/profile");
     }
 
     /**
