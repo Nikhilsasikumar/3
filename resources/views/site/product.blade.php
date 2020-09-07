@@ -60,7 +60,8 @@
             <p>Fill your details below, our agent will contact you shorty</p>
             <form action="/product/enquery" method="post">
                 @csrf
-                <input type="hidden" id="product" name="product" value="2" placeholder="service">
+                <input type="hidden" id="product" name="product" value="{{$product->product_cate}}">
+                <input type="hidden" id="pro_cate" name="pro_cate" value="{{$product->id}}">
                 <div class="form-group">
                     <input type="text" class="form-control input" id="fullname" name="fullname" placeholder="Full Name" required="">
                 </div>

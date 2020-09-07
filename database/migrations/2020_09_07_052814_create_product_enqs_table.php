@@ -16,6 +16,7 @@ class CreateProductEnqsTable extends Migration
         Schema::create('product_enqs', function (Blueprint $table) {
             $table->id();
             $table->integer('product');
+            $table->integer('pro_cate');
             $table->string('fullname', 100);
             $table->string('phone', 100);
             $table->string('place', 100);

@@ -66,7 +66,8 @@
                         <p>Fill your details below, our agent will contact you shorty</p>
                         <form action="/services/enquery" method="post">
                             @csrf
-                            <input type="hidden" id="district" name="service" value="{{$service->id}}" placeholder="service">
+                            <input type="hidden" id="ser_cate" name="ser_cate" value="{{$service->id}}" placeholder="service">
+                            <input type="hidden" id="service" name="service" value="{{$service->service_cate}}" placeholder="service">
                             <div class="form-group">
                                 <input type="text" class="form-control input" id="fullname" name="fullname" placeholder="Full Name" required>
                             </div>

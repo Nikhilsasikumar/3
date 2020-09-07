@@ -16,10 +16,11 @@ class ServicesEnqController extends Controller
      */
     public function index()
     {
-        $serviceEnq = serviceEnq::latest()->join('services', 'services.id', '=', 'service_enqs.service')
+        $serviceEnq = serviceEnq::latest()->join('services', 'services.id', '=', 'service_enqs.ser_cate')
             ->select(
                 'services.service_name',
                 'service_enqs.id',
+                'service_enqs.service',
                 'service_enqs.fullname',
                 'service_enqs.phone',
                 'service_enqs.place',
@@ -52,6 +53,7 @@ class ServicesEnqController extends Controller
     {
         $serviceEnq = new serviceEnq();
         $serviceEnq->service = request('service');
+        $serviceEnq->ser_cate = request('ser_cate');
         $serviceEnq->fullname = request('fullname');
         $serviceEnq->phone = request('phone');
         $serviceEnq->place = request('place');

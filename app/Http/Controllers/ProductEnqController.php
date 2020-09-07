@@ -15,10 +15,11 @@ class ProductEnqController extends Controller
 
 
 
-        $productEnq = productEnq::latest()->join('products', 'products.id', '=', 'product_enqs.product')
+        $productEnq = productEnq::latest()->join('products', 'products.id', '=', 'product_enqs.pro_cate')
             ->select(
                 'products.product_name',
                 'product_enqs.id',
+                'product_enqs.product',
                 'product_enqs.fullname',
                 'product_enqs.phone',
                 'product_enqs.place',
@@ -42,6 +43,7 @@ class ProductEnqController extends Controller
     {
         $productEnq = new productEnq();
         $productEnq->product = request('product');
+        $productEnq->pro_cate = request('pro_cate');
         $productEnq->fullname = request('fullname');
         $productEnq->phone = request('phone');
         $productEnq->place = request('place');

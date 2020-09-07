@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\provider;
+use App\category;
 
 class AdminProvidersController extends Controller
 {
@@ -25,8 +26,9 @@ class AdminProvidersController extends Controller
      */
     public function provider()
     {
+        $categories = category::latest()->get();
         $provider  = provider::latest()->get();
-        return view('admin.provider_table', ['provider' => $provider]);
+        return view('admin.provider_table', ['provider' => $provider, 'categories' => $categories]);
         // return $provider;
     }
 

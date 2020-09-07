@@ -16,6 +16,7 @@ class CreateServiceEnqsTable extends Migration
         Schema::create('service_enqs', function (Blueprint $table) {
             $table->id();
             $table->integer('service');
+            $table->integer('ser_cate');
             $table->string('fullname', 100);
             $table->string('phone', 100);
             $table->string('place', 100);

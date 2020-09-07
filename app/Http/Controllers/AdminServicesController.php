@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\service;
+use App\category;
 
 class AdminServicesController extends Controller
 {
@@ -16,7 +17,8 @@ class AdminServicesController extends Controller
     public function service()
     {
         $service = service::latest()->get();
-        return view('admin.services_table', ['service' => $service]);
+        $categories = category::latest()->get();
+        return view('admin.services_table', ['service' => $service, 'categories' => $categories]);
         // return $service;
     }
     public function create()
@@ -46,7 +48,8 @@ class AdminServicesController extends Controller
         // return view('edite', ['blog' => $blog]);
         if (request()->ajax()) {
             $data = service::findOrFail($id);
-            return response()->json(['data' => $data]);
+            $categories = category::latest()->get();
+            return response()->json(['data' => $data, 'categories' => $categories]);
         }
     }
     public function update(Request $request, $id)

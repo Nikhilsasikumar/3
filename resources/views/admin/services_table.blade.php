@@ -180,7 +180,12 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category</label>
                             <div class="col-lg-9 col-xl-6">
-                                <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="service_cate" required />
+                                <!-- <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="service_cate" required /> -->
+                                <select class="form-control form-control-lg form-control-solid" id="service_cate" name="service_cate" required>
+                                    @foreach($categories as $cate)
+                                    <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
