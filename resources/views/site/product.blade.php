@@ -1,13 +1,13 @@
 @extends("site.app")
 @section("page_title")
-<h1 class="text-white mb-0">Product</h1>
-<div class="custom-breadcrumb">
+<h1 class="text-white mb-0">{{$product->product_name}}</h1>
+<!-- <div class="custom-breadcrumb">
     <ol class="breadcrumb d-inline-block bg-transparent list-inline py-0">
         <li class="list-inline-item breadcrumb-item"><a href="/">Home</a></li>
         <li class="list-inline-item breadcrumb-item active">Products</li>
         <li class="list-inline-item breadcrumb-item active">Product</li>
     </ol>
-</div>
+</div> -->
 @endsection
 
 @section("page_content")
@@ -24,39 +24,8 @@
                 <!--all services list-->
                 <aside class="widget widget-categories">
                     <div class="widget-title">
-                        <h5>All Services</h5>
+                        <h5>Product Details</h5>
                     </div>
-                    <ul class="all-service-list">
-                        <li><a href="#">Financial Services Consulting</a></li>
-                        <li><a href="#">Consumer Product Consulting</a></li>
-                        <li><a href="#">Global Consumer insights</a></li>
-                        <li><a href="#">Independent contractor</a></li>
-                        <li><a href="#">Creative Idea Development</a></li>
-                        <li><a href="#">Social Media Marketing</a></li>
-                    </ul>
-                </aside>
-            </div>
-        </div>
-
-        <!--project details row start-->
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <div class="project-details-content">
-                    <h5>Project Description</h5>
-                    <p>Synergistically syndicate frictionless architectures via global e-services. Assertively
-                        pontificate adaptive e-tailers rather than cross-unit results. Assertively engineer top-line
-                        portals through one-to-one growth strategies. Efficiently.</p>
-                    <p>Proactively reinvent standards compliant applications before timely ROI. Uniquely negotiate
-                        installed base results rather than resource-leveling e-markets. Continually plagiarize
-                        magnetic technologies vis-a-vis synergistic infomediaries. Globally communicate progressive
-                        users without resource maximizing growth strategies. Objectively evolve enterprise.</p>
-                    <p>Collaboratively conceptualize flexible best practices via cooperative methodologies. Assertively negotiate an expanded array of alignments with 24/365 "outside the box" thinking. Assertively enable fully researched vortals rather than alternative niche markets.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <div class="project-details-feature">
                     <ul class="list-unstyled tech-feature-list">
                         <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Foreclosure</strong>
                             consultant Human resource consulting
@@ -67,23 +36,55 @@
                         <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>SEO</strong> Optimization Creative consultant</li>
                         <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Rapidiously</strong> conceptualize strategic before communities</li>
                     </ul>
-                </div>
+                </aside>
             </div>
-            <div class="col-md-6">
-                <div class="project-details-feature">
-                    <ul class="list-unstyled tech-feature-list">
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Consultant</strong>
-                            pharmacist Creative consultant
-                        </li>
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Monotonectally</strong>
-                            customize B2B core competencies
-                        </li>
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Immigration</strong> consultant, Information consulting</li>
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Consultant</strong> pharmacist Creative consultant</li>
-                    </ul>
+        </div>
+
+        <!--project details row start-->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="project-details-content">
+                    <h5>Product Description</h5>
+                    <p>{{$product->product_disc}}</p>
+
                 </div>
             </div>
         </div>
+
+        <div class="align-items-center justify-content-center col-md-6">
+
+            <div class="widget-title">
+                <br>
+                <h5>Need Help?</h5>
+            </div>
+            <p>Fill your details below, our agent will contact you shorty</p>
+            <form action="/product/enquery" method="post">
+                @csrf
+                <input type="hidden" id="product" name="product" value="2" placeholder="service">
+                <div class="form-group">
+                    <input type="text" class="form-control input" id="fullname" name="fullname" placeholder="Full Name" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input" id="phone" name="phone" placeholder="Phone Number" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input" id="place" name="place" placeholder="Place" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input" id="district" name="district" placeholder="District" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input" id="qty" name="qty" placeholder="Required Quantity" required="">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn secondary-solid-btn btn-block btn-not-rounded mt-3">Submit
+                </button>
+            </form>
+
+        </div>
+
         <!--project details row end-->
     </div>
 </section>

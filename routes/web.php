@@ -25,6 +25,15 @@ Route::get('/contact', 'ContactsController@index');
 Route::get('/about', function () {
     return view('site.about');
 });
+Route::post('/services/enquery', 'ServicesEnqController@store');
+Route::get('/thankyou', function () {
+    return view('site.thankyou');
+});
+
+Route::post('/product/enquery', 'ProductEnqController@store');
+Route::get('/thankyou', function () {
+    return view('site.thankyou');
+});
 
 Route::get('/product/{product}', 'ProductsController@show');
 Route::get('/service/{service}', 'ServicesController@show');

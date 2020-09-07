@@ -31,18 +31,20 @@
                     <button type="button" class="filter-btn" data-mixitup-control data-filter=".other">Others</button>
                 </div>
                 <div class="portfolio-container" id="MixItUp">
+                    @foreach($product as $pro)
                     <div class="mix portfolio-item branding" data-ref="mixitup-target">
                         <div class="portfolio-wrapper">
-                            <a href="project-details.html" target="_blank">
+                            <a href="product/{{$pro->id}}">
                                 <div class="content-overlay"></div>
                                 <img class="img-fluid" src="img/portfolios/3.jpg" alt="portfolio" />
                                 <div class="content-details fadeIn-bottom text-white">
-                                    <h5 class="text-white mb-1">Creative Design</h5>
+                                    <h5 class="text-white mb-1">{{$pro->product_name}}</h5>
                                     <p>Design</p>
                                 </div>
                             </a>
                         </div>
                     </div>
+                    @endforeach
                     <div class="mix portfolio-item other animation" data-ref="mixitup-target">
                         <div class="portfolio-wrapper">
                             <a href="project-details.html" target="_blank">

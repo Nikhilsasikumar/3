@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\service;
+use App\serviceEnq;
 
-class ServicesController extends Controller
+class ServicesEnqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $service = service::latest()->get();
-        return view('site.services', ['service' => $service]);
-        // return $service;
+        //
     }
 
     /**
@@ -37,7 +35,17 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $serviceEnq = new serviceEnq();
+        $serviceEnq->service = request('service');
+        $serviceEnq->fullname = request('fullname');
+        $serviceEnq->phone = request('phone');
+        $serviceEnq->place = request('place');
+        $serviceEnq->district = request('district');
+        $serviceEnq->message = request('message');
+        $name = request('fullname');
+        $serviceEnq->save();
+        return view("site.thankyou", compact('name'));
+        // return redirect()->route('/thankyou', ['name' => $name]);
     }
 
     /**
@@ -48,9 +56,7 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-
-        $service = service::find($id);
-        return view('site.service', ['service' => $service]);
+        //
     }
 
     /**

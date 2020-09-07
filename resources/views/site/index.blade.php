@@ -6,16 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- SEO Meta description -->
+    <!--  Meta description -->
     <meta name="description" content="" />
     <meta name="author" content="DataCube Software (NIKHIL SASIKUMAR)" />
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-    <meta property="og:site_name" content="" />
+    <meta property="og:site_name" content="FMC Boat" />
     <!-- website name -->
-    <meta property="og:site" content="" />
+    <meta property="og:site" content="http://boatfmc.com" />
     <!-- website link -->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="FMC Boat Services and Products" />
     <!-- title shown in the actual shared post -->
     <meta property="og:description" content="" />
     <!-- description shown in the actual shared post -->
@@ -23,7 +21,7 @@
     <!-- image link, make sure it's jpg -->
     <meta property="og:url" content="" />
     <!-- where do you want your post to link to -->
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
 
     <!--title-->
     <title>CorporX Corporate and Business HTML Template</title>

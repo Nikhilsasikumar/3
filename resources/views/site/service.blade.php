@@ -1,13 +1,13 @@
 @extends("site.app")
 @section("page_title")
-<h1 class="text-white mb-0">SERVICE</h1>
-<div class="custom-breadcrumb">
+<h1 class="text-white mb-0">{{$service->service_name}}</h1>
+<!-- <div class="custom-breadcrumb">
     <ol class="breadcrumb d-inline-block bg-transparent list-inline py-0">
         <li class="list-inline-item breadcrumb-item"><a href="/">HOME</a></li>
         <li class="list-inline-item breadcrumb-item active">SERVICES</li>
         <li class="list-inline-item breadcrumb-item active">SERVICE</li>
     </ol>
-</div>
+</div> -->
 @endsection
 
 @section("page_content")
@@ -20,11 +20,7 @@
                     <img src="/img/slider-img-2.jpg" alt="services" class="img-fluid rounded shadow-sm" />
                     <div class="services-detail-content mt-4">
                         <h4>Services Details</h4>
-                        <p>Phosfluorescently disseminate magnetic e-business for user-centric "outside the box"
-                            thinking. Compellingly integrate client-based synergy after cutting-edge solutions.
-                            Objectively foster economically sound partnerships with timely meta-services. Globally
-                            develop market positioning methods of empowerment before ubiquitous niches.
-                            Energistically build extensive experiences after real-time channels.</p>
+                        <p>{{$service->service_disc}}</p>
 
                         <p>Seamlessly coordinate high-quality functionalities and bricks-and-clicks methods of
                             empowerment. Authoritatively cultivate adaptive bandwidth and collaborative intellectual
@@ -60,28 +56,33 @@
             <div class="col-lg-4 col-md-4">
                 <div class="sidebar-right pl-4">
                     <!--need help-->
-                    <aside class="widget widget-categories">
-                        <div class="widget-title">
-                            <h5>Need Help?</h5>
-                        </div>
-                        <p>We are available in 24/7 hours for dedicated support</p>
-                        <ul class="primary-list mt-25">
-                            <li><span class="ti-location-pin mr-2 color-primary"></span> 123 Yellow House, Mn 9007
-                            </li>
-                            <li><span class="ti-mobile mr-2 color-primary"></span> (+123) 456-789-012</li>
-                            <li><span class="ti-email mr-2 color-primary"></span> youname@domail.com</li>
-                        </ul>
-                    </aside>
+
 
                     <!-- Subscribe widget-->
                     <aside class="widget widget-categories">
                         <div class="widget-title">
-                            <h5>Newsletter</h5>
+                            <h5>Need Help?</h5>
                         </div>
-                        <p>Enter your email address below to subscribe to my newsletter</p>
-                        <form action="#" method="post" class="d-none d-md-block d-lg-block">
-                            <input type="text" class="form-control input" id="email-footer" name="email" placeholder="info@yourdomain.com">
-                            <button type="submit" class="btn secondary-solid-btn btn-block btn-not-rounded mt-3">Subscribe
+                        <p>Fill your details below, our agent will contact you shorty</p>
+                        <form action="/services/enquery" method="post">
+                            @csrf
+                            <input type="hidden" id="district" name="service" value="{{$service->id}}" placeholder="service">
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="fullname" name="fullname" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="phone" name="phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="place" name="place" placeholder="Place" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="district" name="district" placeholder="District" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn secondary-solid-btn btn-block btn-not-rounded mt-3">Submit
                             </button>
                         </form>
                     </aside>

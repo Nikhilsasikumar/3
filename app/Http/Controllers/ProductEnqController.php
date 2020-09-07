@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\service;
+use App\productEnq;
 
-class ServicesController extends Controller
+class ProductEnqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $service = service::latest()->get();
-        return view('site.services', ['service' => $service]);
-        // return $service;
+        //
     }
 
     /**
@@ -37,7 +35,17 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productEnq = new productEnq();
+        $productEnq->product = request('product');
+        $productEnq->fullname = request('fullname');
+        $productEnq->phone = request('phone');
+        $productEnq->place = request('place');
+        $productEnq->district = request('district');
+        $productEnq->message = request('message');
+        $productEnq->qty = request('qty');
+        $name = request('fullname');
+        $productEnq->save();
+        return view("site.thankyou", compact('name'));
     }
 
     /**
@@ -48,9 +56,7 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-
-        $service = service::find($id);
-        return view('site.service', ['service' => $service]);
+        //
     }
 
     /**

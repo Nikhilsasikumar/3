@@ -64,19 +64,20 @@
             </div>
         </div>
         <div class="row">
+            @foreach($service as $ser)
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
                     <div class="service-icon mr-4">
                         <span class="ti-announcement icon-md color-secondary"></span>
                     </div>
                     <div class="services-content-wrap">
-                        <h5>Marketing Services</h5>
-                        <p class="mb-0">Progressively empower business "outside the box" thinking with resource-leveling
-                            partnerships.</p>
-                        <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
+                        <h5>{{$ser->service_name}}</h5>
+                        <p class="mb-0">{{$ser->service_disc}}</p>
+                        <a href="service/{{$ser->id}}" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
                     </div>
                 </div>
             </div>
+            @endforeach
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
                     <div class="service-icon mr-4">
