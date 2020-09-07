@@ -22,6 +22,7 @@ class CreateProductEnqsTable extends Migration
             $table->string('district', 100);
             $table->string('qty', 100);
             $table->string('message', 500);
+            $table->string('status', 100);
             $table->timestamps();
         });
     }

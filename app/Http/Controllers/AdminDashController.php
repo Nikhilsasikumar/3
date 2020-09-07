@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\serviceEnq;
 
-class ServicesEnqController extends Controller
+class AdminDashController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class ServicesEnqController extends Controller
      */
     public function index()
     {
-        $serviceEnq = serviceEnq::latest()->get();
-        return view('admin.enquery_services', ['serviceEnq' => $serviceEnq]);
+        return view('admin.index');
     }
 
     /**
@@ -36,17 +34,7 @@ class ServicesEnqController extends Controller
      */
     public function store(Request $request)
     {
-        $serviceEnq = new serviceEnq();
-        $serviceEnq->service = request('service');
-        $serviceEnq->fullname = request('fullname');
-        $serviceEnq->phone = request('phone');
-        $serviceEnq->place = request('place');
-        $serviceEnq->district = request('district');
-        $serviceEnq->message = request('message');
-        $name = request('fullname');
-        $serviceEnq->save();
-        return view("site.thankyou", compact('name'));
-        // return redirect()->route('/thankyou', ['name' => $name]);
+        //
     }
 
     /**
@@ -68,19 +56,19 @@ class ServicesEnqController extends Controller
      */
     public function edit($id)
     {
-        if (request()->ajax()) {
-            $data = serviceEnq::findOrFail($id);
-            return response()->json(['data' => $data]);
-        }
+        //
     }
 
-
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
-        $serviceEnq = serviceEnq::find($id);
-        $serviceEnq->status = request('status');
-        $serviceEnq->save();
-        return redirect("/admin/enquery_services");
+        //
     }
 
     /**

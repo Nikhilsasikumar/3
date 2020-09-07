@@ -2,21 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('site.index');
-// });
-
 Route::get('/', 'IndexController@index');
 Route::get('/services', 'ServicesController@index');
 Route::get('/products', 'ProductsController@index');
@@ -45,6 +30,8 @@ Route::get('/admin/index', function () {
 });
 
 
+Route::get('/admins', 'AdminDashController@index');
+
 
 Route::get('/admin/enquery_products', function () {
     return view('admin.enquery_products');
@@ -60,9 +47,14 @@ Route::get('/admin/products/table', function () {
 
 
 //services_enquery
-Route::get('/admin/enquery_services', function () {
-    return view('admin.enquery_services');
-});
+Route::get('/admin/enquery_services', 'ServicesEnqController@index');
+Route::get('/admin/service/{id}/edit', 'ServicesEnqController@edit');
+Route::put('/admin/service/{id}', 'ServicesEnqController@update');
+
+//services_enquery
+Route::get('/admin/enquery_products', 'ProductEnqController@index');
+Route::get('/admin/product/{id}/edit', 'ProductEnqController@edit');
+Route::put('/admin/product/{id}', 'ProductEnqController@update');
 
 //admin
 Route::get('/admin/profile', 'AdminController@index');
