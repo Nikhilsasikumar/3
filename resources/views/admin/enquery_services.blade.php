@@ -223,7 +223,6 @@
                 success: function(html) {
                     // $('#service_photo').val("hhhhhhh");
                     // console.log(html.provider.provider_name);
-                    $('#status').val(html.data.status);
                     $.each(html.provider, function(key, val) {
                         // console.log(val.provider_name);
                         $("#status").append("<option>" + val.provider_name + "</option>");

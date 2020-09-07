@@ -90,7 +90,7 @@
 
                 @foreach($productEnq as $product)
                 <tr>
-                    <td>{{$product->product}}</td>
+                    <td>{{$product->product_name}}</td>
                     <td>{{$product->fullname}}</td>
                     <td>{{$product->status}}</td>
                     <td>{{$product->phone}}</td>
@@ -180,7 +180,10 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Status</label>
                             <div class="col-lg-9 col-xl-6">
-                                <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="status" id="status" required />
+                                <!-- <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="status" id="status" required /> -->
+                                <select class="form-control form-control-lg form-control-solid" id="status" name="status" required>
+
+                                </select>
                             </div>
                         </div>
 
@@ -221,8 +224,10 @@
                 url: "/admin/product/" + id + "/edit",
                 dataType: "json",
                 success: function(html) {
-                    // $('#service_photo').val("hhhhhhh");
-                    $('#status').val(html.data.status);
+                    $.each(html.provider, function(key, val) {
+                        console.log(val.provider_name);
+                        $("#status").append("<option>" + val.provider_name + "</option>");
+                    });
                     $('#editform').attr('action', '/admin/product/' + html.data.id);
                     console.log(html.data.product);
                     $('#EditeEnqModal').modal('show');

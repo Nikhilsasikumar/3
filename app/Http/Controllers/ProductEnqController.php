@@ -4,13 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\productEnq;
+use App\provider;
 
 class ProductEnqController extends Controller
 {
 
     public function index()
     {
-        $productEnq = productEnq::latest()->get();
+        // $productEnq = productEnq::latest()->get();
+
+
+
+        $productEnq = productEnq::latest()->join('products', 'products.id', '=', 'product_enqs.product')
+            ->select(
+                'products.product_name',
+                'product_enqs.id',
+                'product_enqs.fullname',
+                'product_enqs.phone',
+                'product_enqs.place',
+                'product_enqs.district',
+                'product_enqs.message',
+                'product_enqs.status',
+                'product_enqs.qty',
+                'product_enqs.created_at'
+            )->get();
         return view('admin.enquery_products', ['productEnq' => $productEnq]);
     }
 
@@ -30,6 +47,7 @@ class ProductEnqController extends Controller
         $productEnq->place = request('place');
         $productEnq->district = request('district');
         $productEnq->message = request('message');
+        $productEnq->status = 'PENDING';
         $productEnq->qty = request('qty');
         $name = request('fullname');
         $productEnq->save();
@@ -47,7 +65,9 @@ class ProductEnqController extends Controller
     {
         if (request()->ajax()) {
             $data = productEnq::findOrFail($id);
-            return response()->json(['data' => $data]);
+            $cid = $data->product;
+            $provider = provider::latest()->where('provider_cate', $cid)->get();
+            return response()->json(['data' => $data, 'provider' => $provider]);
         }
     }
 
