@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\serviceEnq;
+use App\provider;
+use App\service;
 
 class ServicesEnqController extends Controller
 {
@@ -14,7 +16,19 @@ class ServicesEnqController extends Controller
      */
     public function index()
     {
-        $serviceEnq = serviceEnq::latest()->get();
+        $serviceEnq = serviceEnq::latest()->join('services', 'services.id', '=', 'service_enqs.service')
+            ->select(
+                'services.service_name',
+                'service_enqs.id',
+                'service_enqs.fullname',
+                'service_enqs.phone',
+                'service_enqs.place',
+                'service_enqs.district',
+                'service_enqs.message',
+                'service_enqs.status',
+                'service_enqs.created_at'
+            )->get();
+
         return view('admin.enquery_services', ['serviceEnq' => $serviceEnq]);
     }
 
@@ -43,6 +57,7 @@ class ServicesEnqController extends Controller
         $serviceEnq->place = request('place');
         $serviceEnq->district = request('district');
         $serviceEnq->message = request('message');
+        $serviceEnq->status = 'PENDING';
         $name = request('fullname');
         $serviceEnq->save();
         return view("site.thankyou", compact('name'));
@@ -70,7 +85,10 @@ class ServicesEnqController extends Controller
     {
         if (request()->ajax()) {
             $data = serviceEnq::findOrFail($id);
-            return response()->json(['data' => $data]);
+            $cid = $data->service;
+
+            $provider = provider::latest()->where('provider_cate', $cid)->get();
+            return response()->json(['data' => $data, 'provider' => $provider]);
         }
     }
 

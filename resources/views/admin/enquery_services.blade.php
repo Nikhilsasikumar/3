@@ -19,7 +19,7 @@
             <span class="card-icon">
                 <i class="flaticon2-favourite text-primary"></i>
             </span>
-            <h3 class="card-label">HTML(DOM) Sourced Data</h3>
+            <h3 class="card-label">Service Enquiries</h3>
         </div>
         <div class="card-toolbar">
             <!--begin::Dropdown-->
@@ -89,7 +89,7 @@
 
                 @foreach($serviceEnq as $service)
                 <tr>
-                    <td>{{$service->service}}</td>
+                    <td>{{$service->service_name}}</td>
                     <td>{{$service->fullname}}</td>
                     <td>{{$service->status}}</td>
                     <td>{{$service->phone}}</td>
@@ -178,7 +178,10 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Status</label>
                             <div class="col-lg-9 col-xl-6">
-                                <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="status" id="status" required />
+                                <!-- <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="status" id="status"  /> -->
+                                <select class="form-control form-control-lg form-control-solid" id="status" name="status" required>
+
+                                </select>
                             </div>
                         </div>
 
@@ -219,11 +222,18 @@
                 dataType: "json",
                 success: function(html) {
                     // $('#service_photo').val("hhhhhhh");
+                    // console.log(html.provider.provider_name);
                     $('#status').val(html.data.status);
+                    $.each(html.provider, function(key, val) {
+                        // console.log(val.provider_name);
+                        $("#status").append("<option>" + val.provider_name + "</option>");
+                    });
+
                     $('#editform').attr('action', '/admin/service/' + html.data.id);
                     console.log(html.data.service);
                     $('#EditeEnqModal').modal('show');
                 }
+
             })
         });
     });
