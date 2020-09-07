@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2020 at 02:53 PM
+-- Generation Time: Sep 07, 2020 at 04:34 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -51,6 +51,29 @@ INSERT INTO `admins` (`id`, `first_name`, `last_name`, `username`, `photo`, `pho
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `cate_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `cate_name`, `created_at`, `updated_at`) VALUES
+(1, 'Smart Phones', '2020-09-07 09:59:43', '2020-09-07 09:59:43'),
+(3, 'Softwares', '2020-09-07 09:59:43', '2020-09-07 09:59:43'),
+(5, 'Accounting', '2020-09-07 09:59:43', '2020-09-07 09:59:43'),
+(7, 'Marketting', '2020-09-07 13:22:43', '2020-09-07 13:22:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -86,7 +109,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2020_09_03_042838_create_services_table', 1),
 (10, '2020_09_05_053502_create_products_table', 2),
 (12, '2020_09_05_092355_create_providers_table', 3),
-(13, '2020_09_05_105152_create_admins_table', 4);
+(13, '2020_09_05_105152_create_admins_table', 4),
+(14, '2020_09_07_041649_create_service_enqs_table', 5),
+(15, '2020_09_07_052814_create_product_enqs_table', 6),
+(16, '2020_09_07_095631_create_categories_table', 7);
 
 -- --------------------------------------------------------
 
@@ -121,9 +147,35 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_disc`, `product_cate`, `product_photo`, `created_at`, `updated_at`) VALUES
-(1, 'Samsung Galaxy A51', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout', 'Smart Phones', 'hello.jpgg', '2020-09-05 00:18:09', '2020-09-05 00:18:09'),
-(2, 'Hello', 'Product', 'This is', 'Screenshot (2).png', '2020-09-05 00:53:50', '2020-09-05 03:51:43'),
-(3, 'ggg', 'eeeeee', 'bbbb', 'Screenshot (1).png', '2020-09-05 00:54:10', '2020-09-05 05:00:16');
+(4, 'Samsung Galaxy a51', 'This is samsung', '1', 'Screenshot (3).png', '2020-09-07 08:49:07', '2020-09-07 08:49:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_enqs`
+--
+
+CREATE TABLE `product_enqs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product` int(11) NOT NULL,
+  `pro_cate` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fullname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `place` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qty` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_enqs`
+--
+
+INSERT INTO `product_enqs` (`id`, `product`, `pro_cate`, `fullname`, `phone`, `place`, `district`, `qty`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(6, 1, '4', 'Vijitha C P', '8546987458', 'Panamaram', 'Kannur', '10', 'wqdwq', 'PENDING', '2020-09-07 08:56:04', '2020-09-07 08:56:04');
 
 -- --------------------------------------------------------
 
@@ -147,9 +199,9 @@ CREATE TABLE `providers` (
 --
 
 INSERT INTO `providers` (`id`, `provider_name`, `provider_disc`, `provider_field`, `provider_cate`, `provider_photo`, `created_at`, `updated_at`) VALUES
-(1, 'Sachin Tendulkar', 'It is a long established fact that ', 'Products', 'Smart Phones', 'hello.jpgg', '2020-09-05 04:05:44', '2020-09-05 04:05:44'),
-(2, 'aaaaaa', 'ddddd', 'bbb', 'cccccc', 'Screenshot (2).png', '2020-09-05 04:40:53', '2020-09-05 04:51:32'),
-(3, 'ssssss', 'ssssssss', 'sssss', 'sssss', 'Screenshot (4).png', '2020-09-05 04:53:33', '2020-09-05 04:54:04');
+(7, 'Dearson', 'This is field', 'Software', '3', 'Screenshot (1).png', '2020-09-07 08:45:43', '2020-09-07 08:45:43'),
+(8, '3G Mobiles', 'dddd', 'Smart Phone', '1', 'Screenshot (2).png', '2020-09-07 08:50:15', '2020-09-07 08:50:15'),
+(9, 'Datacube Software', 'Software Solutions', 'Software', '3', 'Screenshot (1).png', '2020-09-07 09:03:06', '2020-09-07 09:03:06');
 
 -- --------------------------------------------------------
 
@@ -172,9 +224,34 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `service_name`, `service_disc`, `service_cate`, `service_photo`, `created_at`, `updated_at`) VALUES
-(1, 'AAAAAAAA', 'Nor is pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure', 'Software', 'hello.jpgg', '2020-09-02 23:38:07', '2020-09-04 23:48:42'),
-(2, 'Marketing', 'This is the description of this topic', 'Marketing', 'Screenshot (4).png', '2020-09-03 00:41:30', '2020-09-03 06:57:45'),
-(3, 'Development', 'Nor is pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure', 'Software', 'Screenshot (2).png', '2020-09-03 00:44:18', '2020-09-03 06:58:06');
+(7, 'Android Development', 'Hello This is android', '3', 'Screenshot (2).png', '2020-09-07 08:46:56', '2020-09-07 08:46:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service_enqs`
+--
+
+CREATE TABLE `service_enqs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service` int(11) NOT NULL,
+  `ser_cate` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fullname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `place` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `service_enqs`
+--
+
+INSERT INTO `service_enqs` (`id`, `service`, `ser_cate`, `fullname`, `phone`, `place`, `district`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(24, 3, '7', 'Vijitha C P', '8546987458', 'Kannur', 'Kannur', 'hello', 'PENDING', '2020-09-07 08:47:29', '2020-09-07 08:47:29');
 
 -- --------------------------------------------------------
 
@@ -204,6 +281,12 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -228,6 +311,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_enqs`
+--
+ALTER TABLE `product_enqs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `providers`
 --
 ALTER TABLE `providers`
@@ -237,6 +326,12 @@ ALTER TABLE `providers`
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `service_enqs`
+--
+ALTER TABLE `service_enqs`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -257,6 +352,12 @@ ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -266,25 +367,37 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `product_enqs`
+--
+ALTER TABLE `product_enqs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `providers`
 --
 ALTER TABLE `providers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `service_enqs`
+--
+ALTER TABLE `service_enqs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
