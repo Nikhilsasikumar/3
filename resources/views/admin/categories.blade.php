@@ -33,7 +33,6 @@
                     </div>
                     <div class="d-flex flex-column">
                         <a href="#" class="text-dark text-hover-primary font-weight-bold font-size-h4 mb-3 " >{{$ser->cate_name}}</a>
-                        
                     </div>
                 </div>
                 <div class="example mt-2">
@@ -43,14 +42,12 @@
                         <form method="post" action="/admin/categories/{{$ser->id}}">
                             @csrf
                             @method('DELETE')
-                        <button  class=" deleteCategory btn" type="submite"  data-toggle="tooltip" title="Delete">D</button>
+                        <button onclick="return confirm('Are you sure')"  class=" deleteCategory btn" type="submite"  data-toggle="tooltip" title="Delete">D</button>
                     </form>
                     </div>
                 </div> 
             </div>
         </div>
-        
-        
     </div>
     @endforeach
     @else
@@ -85,8 +82,6 @@
                                 </h5>
                             </div>
                         </div>
-                       
-                      
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category Name</label>
                             <div class="col-lg-9 col-xl-6">
@@ -106,7 +101,6 @@
         </div>
     </div>
 </div>
-
 
 <!--Edite Service Modal-->
 <div class="modal fade" id="EditeProviderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -137,7 +131,6 @@
                             </div>
                         </div>
                        
-                      
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category Name</label>
                             <div class="col-lg-9 col-xl-6">

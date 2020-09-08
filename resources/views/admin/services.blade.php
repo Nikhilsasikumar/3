@@ -5,7 +5,7 @@
     <a href="/admins" class="text-muted">Dashboard</a>
 </li>
 <li class="breadcrumb-item">
-    <a href="#" class="text-muted">Products</a>
+    <a href="#" class="text-muted">Services</a>
 </li>
 @endsection
 
