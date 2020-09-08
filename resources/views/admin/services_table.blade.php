@@ -31,19 +31,7 @@
                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                     <ul class="nav flex-column nav-hover">
                         <li class="nav-header font-weight-bolder text-uppercase text-primary pb-2">
-                            Choose an option:</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon la la-print"></i>
-                                <span class="nav-text">Print</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon la la-copy"></i>
-                                <span class="nav-text">Copy</span>
-                            </a>
-                        </li>
+                            Choose an option:</li>    
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon la la-file-excel-o"></i>
@@ -69,7 +57,7 @@
             <!--end::Dropdown-->
             <!--begin::Button-->
             <a href="#" class="btn btn-primary font-weight-bolder" data-target="#NewServiceModal" data-toggle="modal">
-                <i class="la la-plus"></i>New Record</a>
+                <i class="la la-plus"></i>New Service</a>
         </div>
     </div>
     <div class="card-body">
@@ -195,8 +183,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark"> New Service </h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">List New Service to your database</span>
+                    <h3 class="card-label font-weight-bolder text-dark"> Update Service </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">Update Existing Service</span>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i aria-hidden="true" class="ki ki-close"></i>

@@ -13,7 +13,6 @@
 @endsection
 
 @section("page_content")
-
 <!--begin::Card-->
 <div class="card card-custom">
     <div class="card-header">
@@ -21,7 +20,7 @@
             <span class="card-icon">
                 <i class="flaticon2-favourite text-primary"></i>
             </span>
-            <h3 class="card-label">HTML(DOM) Sourced Data</h3>
+            <h3 class="card-label">Products Table</h3>
         </div>
         <div class="card-toolbar">
             <!--begin::Dropdown-->
@@ -33,18 +32,6 @@
                     <ul class="nav flex-column nav-hover">
                         <li class="nav-header font-weight-bolder text-uppercase text-primary pb-2">
                             Choose an option:</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon la la-print"></i>
-                                <span class="nav-text">Print</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon la la-copy"></i>
-                                <span class="nav-text">Copy</span>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon la la-file-excel-o"></i>
@@ -70,7 +57,7 @@
             <!--end::Dropdown-->
             <!--begin::Button-->
             <a href="#" class="btn btn-primary font-weight-bolder" data-target="#NewProductModal" data-toggle="modal">
-                <i class="la la-plus"></i>New Record</a>
+                <i class="la la-plus"></i>New Product</a>
             <!--end::Button-->
         </div>
     </div>
@@ -110,9 +97,7 @@
 <!--end::Card-->
 
 @section("page_nav")
-<a href="/admin/products" class="btn btn-light-primary btn-sm font-weight-bold mr-2">
-    Back
-</a>
+<a href="/admin/products" class="btn btn-light-primary btn-sm font-weight-bold mr-2"> Back </a>
 @endsection
 
 <!--New Service Modal-->
@@ -121,25 +106,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">
-                        New Product
-                    </h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">List New Product to your
-                        database</span>
+                    <h3 class="card-label font-weight-bolder text-dark"> New Product</h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">List New Product to your database</span>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i aria-hidden="true" class="ki ki-close"></i>
                 </button>
             </div>
             <div class="modal-body">
-
-                <!--begin::Content-->
-                <!-- <div class="flex-row-fluid ml-lg-8"> -->
-                <!--begin::Card-->
-                <!-- <div class="card card-custom card-stretch"> -->
-
-                <!--begin::Form-->
-
                 <form class="form" method="post" action="/admin/products/table">
                     @csrf
                     <!--begin::Body-->
@@ -147,8 +121,7 @@
                         <div class="row">
                             <label class="col-xl-3"></label>
                             <div class="col-lg-9 col-xl-6">
-                                <h5 class="font-weight-bold mb-6">Product Info
-                                </h5>
+                                <h5 class="font-weight-bold mb-6">Product Info</h5>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -169,14 +142,11 @@
                                         <i class="ki ki-bold-close icon-xs text-muted"></i>
                                     </span>
                                 </div>
-                                <span class="form-text text-muted">Allowed file
-                                    types: png, jpg,
-                                    jpeg.</span>
+                                <span class="form-text text-muted">Allowed file types: png, jpg, jpeg.</span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Product
-                                Name</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Product Name</label>
                             <div class="col-lg-9 col-xl-6">
                                 <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Samsung Galaxy A51" name="product_name" required />
                             </div>
@@ -190,7 +160,6 @@
                                     @endforeach
                                 </select>
                             </div>
-
                         </div>
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Discription</label>
@@ -198,23 +167,14 @@
                                 <div class="input-group input-group-lg input-group-solid">
                                     <textarea class="form-control" rows="3" name="product_disc" placeholder="This is the description of above topic" required></textarea>
                                 </div>
-                                <span class="form-text text-muted">We'll never
-                                    share your email
-                                    with anyone else.</span>
+                                <span class="form-text text-muted">We'll never share your email with anyone else.</span>
                             </div>
                         </div>
                     </div>
-                    <!--end::Body-->
-                    <!-- </form> -->
-                    <!--end::Form-->
-                    <!-- </div> -->
-                    <!-- </div> -->
-                    <!--end::Content-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                <button type="submite" class="btn btn-primary font-weight-bold">Save
-                    changes</button>
+                <button type="submite" class="btn btn-primary font-weight-bold">Save changes</button>
             </div>
             </form>
         </div>
@@ -229,24 +189,15 @@
             <div class="modal-header">
                 <div class="card-title align-items-start flex-column">
                     <h3 class="card-label font-weight-bolder text-dark">
-                        New Service
+                        Update Product
                     </h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">List New Service to your
-                        database</span>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">Update Existing Product</span>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i aria-hidden="true" class="ki ki-close"></i>
                 </button>
             </div>
             <div class="modal-body">
-
-                <!--begin::Content-->
-                <!-- <div class="flex-row-fluid ml-lg-8"> -->
-                <!--begin::Card-->
-                <!-- <div class="card card-custom card-stretch"> -->
-
-                <!--begin::Form-->
-
                 <form class="form" method="post" id="editform" action="">
                     @csrf
                     @method("PUT")
@@ -255,8 +206,7 @@
                         <div class="row">
                             <label class="col-xl-3"></label>
                             <div class="col-lg-9 col-xl-6">
-                                <h5 class="font-weight-bold mb-6">Product Info
-                                </h5>
+                                <h5 class="font-weight-bold mb-6">Product Info</h5>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -277,14 +227,11 @@
                                         <i class="ki ki-bold-close icon-xs text-muted"></i>
                                     </span>
                                 </div>
-                                <span class="form-text text-muted">Allowed file
-                                    types: png, jpg,
-                                    jpeg.</span>
+                                <span class="form-text text-muted">Allowed file types: png, jpg, jpeg.</span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Service
-                                Name</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Product Name</label>
                             <div class="col-lg-9 col-xl-6">
                                 <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Tax Consultant" name="product_name" id="product_name" required />
                             </div>
@@ -292,7 +239,6 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category</label>
                             <div class="col-lg-9 col-xl-6">
-
                                 <select class="form-control form-control-lg form-control-solid" id="categories" name="product_cate" required>
                                     <option value="" id="selected_cate"></option>
                                 </select>
@@ -304,35 +250,25 @@
                                 <div class="input-group input-group-lg input-group-solid">
                                     <textarea class="form-control" rows="3" name="product_disc" id="product_disc" placeholder="This is the description of above topic" required></textarea>
                                 </div>
-                                <span class="form-text text-muted">We'll never
-                                    share your email
-                                    with anyone else.</span>
+                                <span class="form-text text-muted">We'll never share your email with anyone else.</span>
                             </div>
                         </div>
                     </div>
-                    <!--end::Body-->
-                    <!-- </form> -->
-                    <!--end::Form-->
-                    <!-- </div> -->
-                    <!-- </div> -->
-                    <!--end::Content-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                <button type="submite" id="EditeService" class="btn btn-primary font-weight-bold">Save
-                    changes</button>
+                <button type="submite" id="EditeService" class="btn btn-primary font-weight-bold">Save changes</button>
             </div>
             </form>
         </div>
     </div>
 </div>
 @endsection
+
 @section("footer_script")
 
 <script src="/admin/plugins/custom/datatables/datatables.bundlec3e8.js?v=7.0.6"></script>
-
 <script src="/admin/js/pages/crud/datatables/data-sources/htmlc3e8.js?v=7.0.6"></script>
-
 <script>
     $(document).ready(function() {
 
@@ -356,11 +292,11 @@
                         $("#categories").append("<option value='" + val.id + "'>" + val.cate_name + "</option>");
                     });
                     $('#editform').attr('action', '/admin/products/table/' + html.data[0].id);
-
                     $('#EditeProductModal').modal('show');
                 }
             })
         });
     });
 </script>
+
 @endsection
