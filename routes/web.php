@@ -92,3 +92,10 @@ Route::post('/admin/providers/table', 'AdminProvidersController@store');
 Route::get('/admin/providers/table/{id}/edit', 'AdminProvidersController@edit');
 Route::put('/admin/providers/table/{id}', 'AdminProvidersController@update');
 Route::delete('/admin/providers/{id}', 'AdminProvidersController@destroy');
+
+//Category
+Route::get('/admin/categories', 'AdminCategoriesController@index');
+Route::post('/admin/categories', 'AdminCategoriesController@store');
+Route::get('/admin/categories/{id}/edit', 'AdminCategoriesController@edit');
+Route::put('/admin/categories/{id}', 'AdminCategoriesController@update');
+Route::delete('/admin/categories/{id}', 'AdminCategoriesController@destroy');

@@ -15,6 +15,9 @@
 @endsection
 
 @section("page_nav")
+<a href="/admin/categories" class="btn btn-light-danger btn-sm font-weight-bold mr-2">
+    Category
+</a>
 <a href="/admin/providers/table" class="btn btn-light-primary btn-sm font-weight-bold mr-2">
     Table
 </a>
