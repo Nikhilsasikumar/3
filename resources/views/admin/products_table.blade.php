@@ -91,7 +91,7 @@
                 @foreach($product as $pro)
                 <tr>
                     <td>{{$pro->product_name}}</td>
-                    <td>{{$pro->product_cate}}</td>
+                    <td>{{$pro->cate_name}}</td>
                     <td>{{$pro->product_photo}}</td>
                     <td>{{$pro->product_disc}}</td>
                     <td><a href="javascript:;" class="btn btn-sm btn-clean btn-icon EditeProduct" id="{{$pro->id}}" title="Edit details">
@@ -346,17 +346,16 @@
                 dataType: "json",
                 success: function(html) {
                     // $('#service_photo').val("hhhhhhh");
-                    console.log(html.data);
-                    $('#product_name').val(html.data.product_name);
-
-                    $('#product_disc').val(html.data.product_disc);
-                    $('#selected_cate').val(html.data.product_cate);
-                    $('#selected_cate').html(html.data.cate_name);
+                    // console.log(html);
+                    $('#product_name').val(html.data[0].product_name);
+                    $('#product_disc').val(html.data[0].product_disc);
+                    $('#selected_cate').val(html.data[0].product_cate);
+                    $('#selected_cate').html(html.data[0].cate_name);
                     $.each(html.categories, function(key, val) {
-                        // console.log(val.provider_name);
+
                         $("#categories").append("<option value='" + val.id + "'>" + val.cate_name + "</option>");
                     });
-                    $('#editform').attr('action', '/admin/products/table/' + html.data.id);
+                    $('#editform').attr('action', '/admin/products/table/' + html.data[0].id);
 
                     $('#EditeProductModal').modal('show');
                 }

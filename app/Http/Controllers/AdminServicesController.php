@@ -16,7 +16,16 @@ class AdminServicesController extends Controller
     }
     public function service()
     {
-        $service = service::latest()->get();
+        $service = service::latest()->join('categories', 'categories.id', '=', 'services.service_cate')
+            ->select(
+                'categories.cate_name',
+                'services.id',
+                'services.service_name',
+                'services.service_disc',
+                'services.service_cate',
+                'services.service_photo',
+                'services.created_at'
+            )->get();
         $categories = category::latest()->get();
         return view('admin.services_table', ['service' => $service, 'categories' => $categories]);
         // return $service;
@@ -43,11 +52,18 @@ class AdminServicesController extends Controller
     public function edit($id)
     {
 
-        // $blog = service::find($id);
-        // return $blog;
-        // return view('edite', ['blog' => $blog]);
         if (request()->ajax()) {
-            $data = service::findOrFail($id);
+
+            $data = service::findOrFail($id)->join('categories', 'categories.id', '=', 'services.service_cate')
+                ->select(
+                    'categories.cate_name',
+                    'services.id',
+                    'services.service_name',
+                    'services.service_disc',
+                    'services.service_cate',
+                    'services.service_photo',
+                    'services.created_at'
+                )->get();
             $categories = category::latest()->get();
             return response()->json(['data' => $data, 'categories' => $categories]);
         }

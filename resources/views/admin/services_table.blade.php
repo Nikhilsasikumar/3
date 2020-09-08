@@ -13,7 +13,6 @@
 @endsection
 
 @section("page_content")
-
 <!--begin::Card-->
 <div class="card card-custom">
     <div class="card-header">
@@ -21,7 +20,7 @@
             <span class="card-icon">
                 <i class="flaticon2-favourite text-primary"></i>
             </span>
-            <h3 class="card-label">HTML(DOM) Sourced Data</h3>
+            <h3 class="card-label">Services Table</h3>
         </div>
         <div class="card-toolbar">
             <!--begin::Dropdown-->
@@ -71,7 +70,6 @@
             <!--begin::Button-->
             <a href="#" class="btn btn-primary font-weight-bolder" data-target="#NewServiceModal" data-toggle="modal">
                 <i class="la la-plus"></i>New Record</a>
-            <!--end::Button-->
         </div>
     </div>
     <div class="card-body">
@@ -87,11 +85,10 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach($service as $ser)
                 <tr>
                     <td>{{$ser->service_name}}</td>
-                    <td>{{$ser->service_cate}}</td>
+                    <td>{{$ser->cate_name}}</td>
                     <td>{{$ser->service_photo}}</td>
                     <td>{{$ser->service_disc}}</td>
                     <td><a href="javascript:;" class="btn btn-sm btn-clean btn-icon EditeService" id="{{$ser->id}}" title="Edit details">
@@ -99,8 +96,7 @@
                         </a>
                         <a href="javascript:;" class="btn btn-sm btn-clean btn-icon DeleteService" id="{{$ser->id}}" title="Delete">
                             <i class="la la-trash"></i>
-                        </a></td>
-                </tr>
+                        </a></td></tr>
                 @endforeach
             </tbody>
         </table>
@@ -108,8 +104,6 @@
     </div>
 </div>
 <!--end::Card-->
-
-
 
 <!--New Service Modal-->
 <div class="modal fade" id="NewServiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -128,17 +122,8 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <!--begin::Content-->
-                <!-- <div class="flex-row-fluid ml-lg-8"> -->
-                <!--begin::Card-->
-                <!-- <div class="card card-custom card-stretch"> -->
-
-                <!--begin::Form-->
-
                 <form class="form" method="post" action="/admin/services/table">
                     @csrf
-                    <!--begin::Body-->
                     <div class="card-body">
                         <div class="row">
                             <label class="col-xl-3"></label>
@@ -165,14 +150,11 @@
                                         <i class="ki ki-bold-close icon-xs text-muted"></i>
                                     </span>
                                 </div>
-                                <span class="form-text text-muted">Allowed file
-                                    types: png, jpg,
-                                    jpeg.</span>
+                                <span class="form-text text-muted">Allowed file types: png, jpg, jpeg.</span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Service
-                                Name</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Service  Name</label>
                             <div class="col-lg-9 col-xl-6">
                                 <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Tax Consultant" name="service_name" required />
                             </div>
@@ -180,7 +162,6 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category</label>
                             <div class="col-lg-9 col-xl-6">
-                                <!-- <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="service_cate" required /> -->
                                 <select class="form-control form-control-lg form-control-solid" id="service_cate" name="service_cate" required>
                                     @foreach($categories as $cate)
                                     <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
@@ -194,29 +175,19 @@
                                 <div class="input-group input-group-lg input-group-solid">
                                     <textarea class="form-control" rows="3" name="service_disc" placeholder="This is the description of above topic" required></textarea>
                                 </div>
-                                <span class="form-text text-muted">We'll never
-                                    share your email
-                                    with anyone else.</span>
+                                <span class="form-text text-muted">We'll never share your email with anyone else.</span>
                             </div>
                         </div>
                     </div>
-                    <!--end::Body-->
-                    <!-- </form> -->
-                    <!--end::Form-->
-                    <!-- </div> -->
-                    <!-- </div> -->
-                    <!--end::Content-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                <button type="submite" class="btn btn-primary font-weight-bold">Save
-                    changes</button>
+                <button type="submite" class="btn btn-primary font-weight-bold">Save changes</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-
 
 <!--Edite Service Modal-->
 <div class="modal fade" id="EditeServiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -224,29 +195,19 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">
-                        New Service
-                    </h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">List New Service to your
-                        database</span>
+                    <h3 class="card-label font-weight-bolder text-dark"> New Service </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">List New Service to your database</span>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i aria-hidden="true" class="ki ki-close"></i>
                 </button>
             </div>
+
             <div class="modal-body">
-
-                <!--begin::Content-->
-                <!-- <div class="flex-row-fluid ml-lg-8"> -->
-                <!--begin::Card-->
-                <!-- <div class="card card-custom card-stretch"> -->
-
                 <!--begin::Form-->
-
                 <form class="form" method="post" id="editform" action="">
                     @csrf
                     @method("PUT")
-                    <!--begin::Body-->
                     <div class="card-body">
                         <div class="row">
                             <label class="col-xl-3"></label>
@@ -273,14 +234,11 @@
                                         <i class="ki ki-bold-close icon-xs text-muted"></i>
                                     </span>
                                 </div>
-                                <span class="form-text text-muted">Allowed file
-                                    types: png, jpg,
-                                    jpeg.</span>
+                                <span class="form-text text-muted">Allowed file types: png, jpg, jpeg.</span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Service
-                                Name</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">Service Name</label>
                             <div class="col-lg-9 col-xl-6">
                                 <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Tax Consultant" name="service_name" id="service_name" required />
                             </div>
@@ -288,7 +246,9 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category</label>
                             <div class="col-lg-9 col-xl-6">
-                                <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="service_cate" id="service_cate" required />
+                                <select class="form-control form-control-lg form-control-solid" id="categories" name="service_cate" required>
+                                    <option value="" id="selected_cate"></option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -297,45 +257,33 @@
                                 <div class="input-group input-group-lg input-group-solid">
                                     <textarea class="form-control" rows="3" name="service_disc" id="service_disc" placeholder="This is the description of above topic" required></textarea>
                                 </div>
-                                <span class="form-text text-muted">We'll never
-                                    share your email
-                                    with anyone else.</span>
+                                <span class="form-text text-muted">We'll never share your email with anyone else.</span>
                             </div>
                         </div>
                     </div>
-                    <!--end::Body-->
-                    <!-- </form> -->
-                    <!--end::Form-->
-                    <!-- </div> -->
-                    <!-- </div> -->
-                    <!--end::Content-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-                <button type="submite" id="EditeService" class="btn btn-primary font-weight-bold">Save
-                    changes</button>
+                <button type="submite" id="EditeService" class="btn btn-primary font-weight-bold">Save changes</button>
             </div>
             </form>
         </div>
     </div>
 </div>
 @endsection
+
 @section("page_nav")
 <a href="/admin/services" class="btn btn-light-primary btn-sm font-weight-bold mr-2">
     Back
 </a>
 @endsection
+
 @section("footer_script")
-
 <script src="/admin/plugins/custom/datatables/datatables.bundlec3e8.js?v=7.0.6"></script>
-
 <script src="/admin/js/pages/crud/datatables/data-sources/htmlc3e8.js?v=7.0.6"></script>
-
 <script>
     $(document).ready(function() {
-
         $(document).on('click', '.EditeService', function() {
-
             var id = $(this).attr('id');
             // alert(id);
             // $('#form_result').html('');
@@ -344,17 +292,18 @@
                 dataType: "json",
                 success: function(html) {
                     // $('#service_photo').val("hhhhhhh");
-                    $('#service_name').val(html.data.service_name);
-                    $('#service_cate').val(html.data.service_cate);
-                    $('#service_disc').val(html.data.service_disc);
-                    $('#editform').attr('action', '/admin/services/table/' + html.data.id);
-                    console.log(html.data.service_name);
+                    $('#service_name').val(html.data[0].service_name);
+                    $('#service_disc').val(html.data[0].service_disc);
+                    $('#selected_cate').val(html.data[0].service_cate);
+                    $('#selected_cate').html(html.data[0].cate_name);
+                    $.each(html.categories, function(key, val) {
+                        $("#categories").append("<option value='" + val.id + "'>" + val.cate_name + "</option>");
+                    });
+                    $('#editform').attr('action', '/admin/services/table/' + html.data[0].id);
                     $('#EditeServiceModal').modal('show');
                 }
             })
         });
     });
 </script>
-
-
 @endsection
