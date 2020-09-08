@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2020 at 04:34 PM
+-- Generation Time: Sep 08, 2020 at 02:41 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -66,10 +66,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `cate_name`, `created_at`, `updated_at`) VALUES
-(1, 'Smart Phones', '2020-09-07 09:59:43', '2020-09-07 09:59:43'),
-(3, 'Softwares', '2020-09-07 09:59:43', '2020-09-07 09:59:43'),
-(5, 'Accounting', '2020-09-07 09:59:43', '2020-09-07 09:59:43'),
-(7, 'Marketting', '2020-09-07 13:22:43', '2020-09-07 13:22:43');
+(17, 'Software', '2020-09-08 04:06:40', '2020-09-08 04:06:40');
 
 -- --------------------------------------------------------
 
@@ -126,6 +123,13 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('nikhilsasikumar1@gmail.com', '$2y$10$SFR.NNRfJlI.9GaLx0wv6OzwZL2GkJR0AE/cZW6nQxr4nEaUOJXUK', '2020-09-08 06:30:46');
+
 -- --------------------------------------------------------
 
 --
@@ -147,7 +151,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_disc`, `product_cate`, `product_photo`, `created_at`, `updated_at`) VALUES
-(4, 'Samsung Galaxy a51', 'This is samsung', '1', 'Screenshot (3).png', '2020-09-07 08:49:07', '2020-09-07 08:49:07');
+(5, 'Samsung Galaxy a51', 'Smart Phones', '1', 'Screenshot (1).png', '2020-09-08 00:30:48', '2020-09-08 00:30:48');
 
 -- --------------------------------------------------------
 
@@ -175,7 +179,7 @@ CREATE TABLE `product_enqs` (
 --
 
 INSERT INTO `product_enqs` (`id`, `product`, `pro_cate`, `fullname`, `phone`, `place`, `district`, `qty`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(6, 1, '4', 'Vijitha C P', '8546987458', 'Panamaram', 'Kannur', '10', 'wqdwq', 'PENDING', '2020-09-07 08:56:04', '2020-09-07 08:56:04');
+(7, 1, '5', 'Ajith Joshy', '8546987458', 'Kannur', 'Wayanad', '10', 'Hello', 'Dearson', '2020-09-08 00:31:36', '2020-09-08 00:32:01');
 
 -- --------------------------------------------------------
 
@@ -199,9 +203,9 @@ CREATE TABLE `providers` (
 --
 
 INSERT INTO `providers` (`id`, `provider_name`, `provider_disc`, `provider_field`, `provider_cate`, `provider_photo`, `created_at`, `updated_at`) VALUES
-(7, 'Dearson', 'This is field', 'Software', '3', 'Screenshot (1).png', '2020-09-07 08:45:43', '2020-09-07 08:45:43'),
-(8, '3G Mobiles', 'dddd', 'Smart Phone', '1', 'Screenshot (2).png', '2020-09-07 08:50:15', '2020-09-07 08:50:15'),
-(9, 'Datacube Software', 'Software Solutions', 'Software', '3', 'Screenshot (1).png', '2020-09-07 09:03:06', '2020-09-07 09:03:06');
+(12, 'Dearson', 'Oppo Smart Phones', 'Oppo', '1', 'Screenshot (1).png', '2020-09-08 00:30:17', '2020-09-08 00:30:17'),
+(13, 'Datacube Software', 'Software solutions', 'Software', '3', 'Screenshot (3).png', '2020-09-08 00:37:08', '2020-09-08 00:37:08'),
+(14, 'Datacube Software', 'Software Solutions', 'Software', '17', 'Screenshot (2).png', '2020-09-08 04:08:55', '2020-09-08 04:08:55');
 
 -- --------------------------------------------------------
 
@@ -224,7 +228,7 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `service_name`, `service_disc`, `service_cate`, `service_photo`, `created_at`, `updated_at`) VALUES
-(7, 'Android Development', 'Hello This is android', '3', 'Screenshot (2).png', '2020-09-07 08:46:56', '2020-09-07 08:46:56');
+(9, 'Android Developments', 'Hello This is android', '17', 'Screenshot (2).png', '2020-09-08 04:07:11', '2020-09-08 04:07:30');
 
 -- --------------------------------------------------------
 
@@ -251,7 +255,9 @@ CREATE TABLE `service_enqs` (
 --
 
 INSERT INTO `service_enqs` (`id`, `service`, `ser_cate`, `fullname`, `phone`, `place`, `district`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(24, 3, '7', 'Vijitha C P', '8546987458', 'Kannur', 'Kannur', 'hello', 'PENDING', '2020-09-07 08:47:29', '2020-09-07 08:47:29');
+(25, 3, '8', 'Vijitha C P', '8546987458', 'Kannur', 'Wayanad', 'Hello', 'Datacube Software', '2020-09-08 00:35:19', '2020-09-08 00:37:22'),
+(26, 3, '8', 'Vijitha C P', '8546987458', 'Kannur', 'Wayanad', 'Hello', 'Datacube Software', '2020-09-08 00:40:27', '2020-09-08 03:38:30'),
+(27, 17, '9', 'Vijitha C P', '8546987458', 'Kannur', 'Kannur', 'Hello', 'Datacube Software', '2020-09-08 04:08:07', '2020-09-08 04:09:09');
 
 -- --------------------------------------------------------
 
@@ -269,6 +275,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Nikhil Sasikumar', 'nikhilsasikumar1@gmail.com', NULL, '$2y$10$piVrImuZAAdWSb0I0r9TB.2fmcZHwjttx8YrJYOXw8ByP6ew.0Hwu', 'WYyVtgldxPIaLLYvghBZCDBKNUmlku03JGEW1yAapQbvgbzQbH4MCgRGJvY6', '2020-09-08 04:43:02', '2020-09-08 04:43:02');
 
 --
 -- Indexes for dumped tables
@@ -355,7 +368,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -373,37 +386,37 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product_enqs`
 --
 ALTER TABLE `product_enqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `providers`
 --
 ALTER TABLE `providers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `service_enqs`
 --
 ALTER TABLE `service_enqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
