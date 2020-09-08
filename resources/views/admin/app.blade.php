@@ -61,8 +61,8 @@
                 <!--begin::Header Mobile-->
                 <div id="kt_header_mobile" class="header-mobile">
                     <!--begin::Logo-->
-                    <a href="index.html">
-                        <img alt="Logo" src="/admin/media/logos/logo-default.png" class="max-h-30px" />
+                    <a href="/admins">
+                        <img alt="Logo" src="/admin/media/logos/fmc_logo.png" class="max-h-30px" />
                     </a>
                     <!--end::Logo-->
                     <div class="d-flex align-items-center">
@@ -90,8 +90,8 @@
                         <!--begin::Left-->
                         <div class="d-none d-lg-flex align-items-center mr-3">
                             <!--begin::Logo-->
-                            <a href="index.html" class="mr-20">
-                                <img alt="Logo" src="/admin/media/logos/logo-default.png" class="logo-default max-h-35px" />
+                            <a href="/admins" class="mr-20">
+                                <img alt="Logo" src="/admin/media/logos/fmc_logo.png" class="logo-default max-h-35px" />
                             </a>
                             <!--end::Logo-->
                         </div>
