@@ -26,8 +26,18 @@ class AdminProvidersController extends Controller
      */
     public function provider()
     {
+        $provider = provider::latest()->join('categories', 'categories.id', '=', 'providers.provider_cate')
+            ->select(
+                'categories.cate_name',
+                'providers.id',
+                'providers.provider_name',
+                'providers.provider_disc',
+                'providers.provider_field',
+                'providers.provider_cate',
+                'providers.provider_photo',
+                'providers.created_at'
+            )->get();
         $categories = category::latest()->get();
-        $provider  = provider::latest()->get();
         return view('admin.provider_table', ['provider' => $provider, 'categories' => $categories]);
         // return $provider;
     }
@@ -81,8 +91,19 @@ class AdminProvidersController extends Controller
     public function edit($id)
     {
         if (request()->ajax()) {
-            $data = provider::findOrFail($id);
-            return response()->json(['data' => $data]);
+            $data = provider::findOrFail($id)->join('categories', 'categories.id', '=', 'providers.provider_cate')
+                ->select(
+                    'categories.cate_name',
+                    'providers.id',
+                    'providers.provider_name',
+                    'providers.provider_disc',
+                    'providers.provider_field',
+                    'providers.provider_cate',
+                    'providers.provider_photo',
+                    'providers.created_at'
+                )->get();
+            $categories = category::latest()->get();
+            return response()->json(['data' => $data, 'categories' => $categories]);
         }
     }
 
