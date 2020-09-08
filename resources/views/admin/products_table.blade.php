@@ -184,8 +184,13 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category</label>
                             <div class="col-lg-9 col-xl-6">
-                                <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Smart Phones" name="product_cate" required />
+                                <select class="form-control form-control-lg form-control-solid" id="" name="product_cate" required>
+                                    @foreach($categories as $cate)
+                                    <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
+
                         </div>
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Discription</label>
@@ -287,7 +292,10 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Category</label>
                             <div class="col-lg-9 col-xl-6">
-                                <input class="form-control form-control-lg form-control-solid" type="text" value="" placeholder="Accounting" name="product_cate" id="product_cate" required />
+
+                                <select class="form-control form-control-lg form-control-solid" id="categories" name="product_cate" required>
+                                    <option value="" id="selected_cate"></option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -338,11 +346,18 @@
                 dataType: "json",
                 success: function(html) {
                     // $('#service_photo').val("hhhhhhh");
+                    console.log(html.data);
                     $('#product_name').val(html.data.product_name);
-                    $('#product_cate').val(html.data.product_cate);
+
                     $('#product_disc').val(html.data.product_disc);
+                    $('#selected_cate').val(html.data.product_cate);
+                    $('#selected_cate').html(html.data.cate_name);
+                    $.each(html.categories, function(key, val) {
+                        // console.log(val.provider_name);
+                        $("#categories").append("<option value='" + val.id + "'>" + val.cate_name + "</option>");
+                    });
                     $('#editform').attr('action', '/admin/products/table/' + html.data.id);
-                    console.log(html.data.product_name);
+
                     $('#EditeProductModal').modal('show');
                 }
             })

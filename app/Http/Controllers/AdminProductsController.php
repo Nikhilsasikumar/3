@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\product;
+use App\category;
 
 class AdminProductsController extends Controller
 {
@@ -26,7 +27,8 @@ class AdminProductsController extends Controller
     public function product()
     {
         $product = product::latest()->get();
-        return view('admin.products_table', ['product' => $product]);
+        $categories = category::latest()->get();
+        return view('admin.products_table', ['product' => $product, 'categories' => $categories]);
         // return $product;
     }
 
@@ -78,8 +80,19 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         if (request()->ajax()) {
-            $data = product::findOrFail($id);
-            return response()->json(['data' => $data]);
+            // $data = product::findOrFail($id);
+            $data = product::latest()->join('categories', 'categories.id', '=', 'products.product_cate')
+                ->select(
+                    'categories.cate_name',
+                    'products.id',
+                    'products.product_name',
+                    'products.product_disc',
+                    'products.product_cate',
+                    'products.product_photo',
+                    'products.created_at'
+                )->where('products.id', '=', $id)->get();
+            $categories = category::latest()->get();
+            return response()->json(['data' => $data, 'categories' => $categories]);
         }
     }
 
