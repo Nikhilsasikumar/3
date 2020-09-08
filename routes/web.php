@@ -99,3 +99,7 @@ Route::post('/admin/categories', 'AdminCategoriesController@store');
 Route::get('/admin/categories/{id}/edit', 'AdminCategoriesController@edit');
 Route::put('/admin/categories/{id}', 'AdminCategoriesController@update');
 Route::delete('/admin/categories/{id}', 'AdminCategoriesController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

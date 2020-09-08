@@ -254,9 +254,8 @@
                                         <div class="symbol symbol-md bg-light-primary mr-3 flex-shrink-0">
                                             <img src="/admin/media/users/300_21.jpg" alt="" />
                                         </div>
-                                        <div class="text-dark m-0 flex-grow-1 mr-3 font-size-h5">Sean Stone</div>
-                                        <span class="label label-light-success label-lg font-weight-bold label-inline">3
-                                            messages</span>
+                                        <div class="text-dark m-0 flex-grow-1 mr-3 font-size-h5">{{ Auth::user()->name }}</div>
+                                        <span class="label label-light-success label-lg font-weight-bold label-inline">Admin</span>
                                     </div>
                                     <div class="separator separator-solid"></div>
                                     <div class="navi navi-spacer-x-0 pt-5">
@@ -277,7 +276,15 @@
                                         <!--begin::Footer-->
                                         <div class="navi-separator mt-3"></div>
                                         <div class="navi-footer px-8 py-5">
-                                            <a href="custom/user/login-v2.html" target="_blank" class="btn btn-light-primary font-weight-bold">Sign Out</a>
+                                            {{-- <a href="" class="btn btn-light-primary font-weight-bold">Sign Out</a> --}}
+                                            <a href="{{ route('logout') }}"class="btn btn-light-primary font-weight-bold"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                         </div>
                                     </div>
                                 </div>
