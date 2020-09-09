@@ -46,12 +46,34 @@ class AdminProvidersController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'provider_name' => 'required',
+            'provider_field' => 'required',
+            'provider_disc' => 'required',
+            'provider_cate' => 'required',
+            'provider_photo' => 'image|nullable|max:1999'
+        ]);
+        //Handle File Upload
+        if ($request->hasFile('provider_photo')) {
+            //GET File with Extension
+            $fileNameWithExt = $request->file('provider_photo')->getClientOriginalName();
+            //GET Just file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            //GET just Ext
+            $extention = $request->file('provider_photo')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extention;
+            //upload Image
+            $path = $request->file('provider_photo')->storeAs('public/provider_photos', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
         $provider = new provider();
         $provider->provider_name = request('provider_name');
         $provider->provider_field = request('provider_field');
         $provider->provider_disc = request('provider_disc');
         $provider->provider_cate = request('provider_cate');
-        $provider->provider_photo = request('provider_photo');
+        $provider->provider_photo = $fileNameToStore;
         $provider->save();
         return redirect("/admin/providers/table");
         // return request('provider_name');

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\admin;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -15,21 +17,20 @@ class AdminController extends Controller
     public function index()
     {
         // $profile = admin::latest()->get();
-        $profile = admin::where('phone', '9656676466')->first();
+        $profile = User::where('phone', Auth::user()->phone)->first();
         return view('admin.profile', ['profile' => $profile]);
         // return $profile;
     }
     public function account()
     {
         // $profile = admin::latest()->get();
-        $profile = admin::where('phone', '9656676466')->first();
-        return view('admin.account', ['profile' => $profile]);
+
         // return $profile;
     }
     public function password()
     {
         // $profile = admin::latest()->get();
-        $profile = admin::where('phone', '9656676466')->first();
+        $profile = User::where('phone', Auth::user()->phone)->first();
         return view('admin.password', ['profile' => $profile]);
         // return $profile;
     }

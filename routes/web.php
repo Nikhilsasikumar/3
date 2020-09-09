@@ -59,8 +59,8 @@ Route::put('/admin/product/{id}', 'ProductEnqController@update');
 //admin
 Route::get('/admin/profile', 'AdminController@index');
 Route::put('/admin/profile/{id}', 'AdminController@update');
-Route::get('/admin/profile/account', 'AdminController@account');
-Route::put('/admin/profile/account/{id}', 'AdminController@updateacc');
+Route::get('/admin/profile/siteinfos', 'SiteinfosController@index');
+Route::put('/admin/profile/siteinfos/{id}', 'SiteinfosController@updateacc');
 Route::get('/admin/profile/password', 'AdminController@password');
 Route::put('/admin/profile/password{id}', 'AdminController@updatepass');
 // Route::post('/admin/services/table', 'AdminServicesController@store');

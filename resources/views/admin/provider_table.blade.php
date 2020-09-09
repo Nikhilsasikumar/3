@@ -123,7 +123,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form" method="post" action="/admin/providers/table">
+                <form class="form" method="post" action="/admin/providers/table" enctype="multipart/form-data">
                     @csrf
                     <!--begin::Body-->
                     <div class="card-body">

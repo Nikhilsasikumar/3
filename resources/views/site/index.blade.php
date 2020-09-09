@@ -77,11 +77,10 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <span class="fas fa-envelope mr-1"></span>
-                                    <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+                                    <a href="mailto:support@yourdomain.com">fmcboat@gmail.com</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <span class="fas fa-map-marker mr-1"></span> Address
-                                    CA-234/B New York, USA
+                                    <span class="fas fa-map-marker mr-1"></span>Perinthalmanna,Malappuram
                                 </li>
                             </ul>
                         </div>
@@ -91,7 +90,7 @@
                             <ul class="list-inline text-md-right text-lg-right text-left">
                                 <li class="list-inline-item">
                                     <span class="ti-phone mr-2"></span> Call Now:
-                                    <strong>883-4565-123456</strong>
+                                    <strong>9656-6666-66</strong>
                                 </li>
                             </ul>
                         </div>
@@ -142,7 +141,7 @@
                             </p>
 
                             <div class="action-btns mt-3">
-                                <a href="#" class="btn secondary-solid-btn">Get Start Now</a>
+                                <a href="/services" class="btn secondary-solid-btn">View Our Services</a>
                             </div>
                         </div>
                     </div>
@@ -161,7 +160,7 @@
                                 <span class="fab fa-superpowers icon-md color-primary"></span>
                             </div>
                             <div class="promo-block-content">
-                                <h5>Creative Design</h5>
+                                <h5>Tax Return Filing</h5>
                                 <p>
                                     Compellingly promote collaborative products without
                                     synergistic schemas.
@@ -208,7 +207,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="section-heading text-center mb-5">
-                            <h2>We Provide Best Quality Services</h2>
+                            <h2><a href="/services">We Provide Best Quality Services</a></h2>
                             <p class="lead">
                                 Efficiently aggregate end-to-end core competencies without
                                 maintainable ideas. Dynamically foster tactical solutions
@@ -218,110 +217,36 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                            <div class="service-icon mr-4">
-                                <span class="ti-announcement icon-md color-secondary"></span>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h5>Marketing Services</h5>
-                                <p class="mb-0">
-                                    Progressively empower business "outside the box" thinking
-                                    with resource-leveling partnerships.
-                                </p>
-                                <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                            <div class="service-icon mr-4">
-                                <span class="ti-light-bulb icon-md color-secondary"></span>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h5>Web App Development</h5>
-                                <p class="mb-0">
-                                    Quickly pontificate holistic e-commerce rather than
-                                    goal-oriented web-readiness enhance inexpensive.
-                                </p>
-                                <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                            <div class="service-icon mr-4">
-                                <span class="ti-headphone-alt icon-md color-secondary"></span>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h5>24/7 Call Center Service</h5>
-                                <p class="mb-0">
-                                    Authoritatively reinvent multimedia based niches with global
-                                    portals orchestrate client-centered .
-                                </p>
-                                <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                            <div class="service-icon mr-4">
-                                <span class="ti-bell icon-md color-secondary"></span>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h5>Social Media Marketing</h5>
-                                <p class="mb-0">
-                                    Assertively leverage other's standardized e-services with
-                                    fully tested e-commerce strategize synergistic.
-                                </p>
-                                <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach($service as $ser)
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
                             <div class="service-icon mr-4">
                                 <span class="ti-briefcase icon-md color-secondary"></span>
                             </div>
                             <div class="services-content-wrap">
-                                <h5>Corporate Business</h5>
+                                <h5>{{$ser->service_name}}</h5>
                                 <p class="mb-0">
-                                    Enthusiastically scale client-centric supply chains
-                                    vis-a-vis enabled benefits empower global core.
+                                    {{$ser->service_disc}}
                                 </p>
-                                <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
+                            <a href="/service/{{$ser->id}}"class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                            <div class="service-icon mr-4">
-                                <span class="ti-vector icon-md color-secondary"></span>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h5>Creative Consultancy</h5>
-                                <p class="mb-0">
-                                    Conveniently productize corporate imperatives for innovative
-                                    best practices ideas whereas ethical change.
-                                </p>
-                                <a href="services-details.html" target="_blank" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
         <!--services section end-->
 
-        <!--our work or portfolio section start-->
+        <!--Product section start-->
         <section class="our-portfolio-section ptb-100">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-heading text-center mb-5">
-                            <h2>Check Our Quality Work</h2>
+                            <h2><a href="/products">Check Our Tons of Products</a></h2>
                             <p class="lead">
-                                Dynamically pursue reliable convergence rather than 24/7
+                                Dynamically pursue 
                                 process improvements. Intrinsicly develop end-to-end customer
                                 service without extensive data.
                             </p>
@@ -330,95 +255,27 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="text-center pb-2">
-                            <button type="button" class="filter-btn" data-mixitup-control data-filter="all">
-                                All
-                            </button>
-                            <button type="button" class="filter-btn" data-mixitup-control data-filter=".branding">
-                                Branding
-                            </button>
-                            <button type="button" class="filter-btn" data-mixitup-control data-filter=".animation">
-                                Animation
-                            </button>
-                            <button type="button" class="filter-btn" data-mixitup-control data-filter=".other">
-                                Others
-                            </button>
-                        </div>
+                        
                         <div class="portfolio-container" id="MixItUp">
+
+                            @foreach($product as $pro)
                             <div class="mix portfolio-item branding" data-ref="mixitup-target">
                                 <div class="portfolio-wrapper">
-                                    <a href="project-details.html" target="_blank">
+                                
                                         <div class="content-overlay"></div>
-                                        <img class="img-fluid" src="img/portfolios/3.jpg" alt="portfolio" />
-                                        <div class="content-details fadeIn-bottom text-white">
-                                            <h5 class="text-white mb-1">Creative Design</h5>
-                                            <p>Design</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mix portfolio-item other animation" data-ref="mixitup-target">
-                                <div class="portfolio-wrapper">
-                                    <a href="project-details.html" target="_blank">
-                                        <div class="content-overlay"></div>
-                                        <img class="img-fluid" src="img/portfolios/2.jpg" alt="portfolio" />
-                                        <div class="content-details fadeIn-bottom text-white">
-                                            <h5 class="text-white mb-1">Web UI/UX Design</h5>
-                                            <p>Web, Design</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mix portfolio-item animation" data-ref="mixitup-target">
-                                <div class="portfolio-wrapper">
-                                    <a href="project-details.html" target="_blank">
-                                        <div class="content-overlay"></div>
-                                        <img class="img-fluid" src="img/portfolios/4.jpg" alt="portfolio" />
-                                        <div class="content-details fadeIn-bottom text-white">
-                                            <h5 class="text-white mb-1">Corporate Flyer Design</h5>
-                                            <p>Flyer Design</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mix portfolio-item branding" data-ref="mixitup-target">
-                                <div class="portfolio-wrapper">
-                                    <a href="project-details.html" target="_blank">
-                                        <div class="content-overlay"></div>
-                                        <img class="img-fluid" src="img/portfolios/1.jpg" alt="portfolio" />
-                                        <div class="content-details fadeIn-bottom text-white">
-                                            <h5 class="text-white mb-1">Web UI/UX Design</h5>
-                                            <p>Web, Design</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mix portfolio-item animation other" data-ref="mixitup-target">
-                                <div class="portfolio-wrapper">
-                                    <a href="project-details.html" target="_blank">
-                                        <div class="content-overlay"></div>
-                                        <img class="img-fluid" src="img/portfolios/5.jpg" alt="portfolio" />
-                                        <div class="content-details fadeIn-bottom text-white">
-                                            <h5 class="text-white mb-1">Wall Painting Design</h5>
-                                            <p>Painting Design</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mix portfolio-item branding" data-ref="mixitup-target">
-                                <div class="portfolio-wrapper">
-                                    <a href="project-details.html" target="_blank">
-                                        <div class="content-overlay"></div>
-                                        <img class="img-fluid" src="img/portfolios/6.jpg" alt="portfolio" />
+                                        <img class="img-fluid" src="/storage/products_photos/{{$pro->product_photo}}" alt="{{$pro->product_name}}" />
+                                        <a href="/product/{{$pro->id}}">
                                         <div class="content-details fadeIn-bottom text-white">
                                             <h5 class="text-white mb-1">
-                                                Corporate Identity Design
+                                                {{$pro->product_name}}
                                             </h5>
-                                            <p>Corporate Design</p>
+                                            <p>{{$pro->product_disc}}</p>
+                                            <span class="ti-arrow-right"></span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
+                            @endforeach
                             <div class="gap"></div>
                             <div class="gap"></div>
                             <div class="gap"></div>
@@ -428,6 +285,53 @@
             </div>
         </section>
         <!--our work or portfolio section end-->
+
+        <!--client section start-->
+<div class="client-section ptb-100 gray-light-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-heading text-center mb-5">
+                    <h5><a href="/services">Our Partners</a></h5>
+                  
+                </div>
+            </div>
+        </div>
+        <!--clients logo start-->
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme clients-carousel dot-indicator">
+                    <div class="item single-client">
+                        <img src="img/clients-logo-01.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-02.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-03.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-04.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-05.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-06.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-07.png" alt="client logo" class="client-img">
+                    </div>
+                    <div class="item single-client">
+                        <img src="img/clients-logo-08.png" alt="client logo" class="client-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--clients logo end-->
+    </div>
+</div>
+<!--client section start-->
     </div>
     <!--body content wrap end-->
 
@@ -523,18 +427,9 @@
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2">
-                                            <span class="fas fa-map-marker-alt mr-2"></span> 1234
-                                            Street Name, City Name, USA
-                                        </li>
-                                        <li class="d-flex align-items-center py-2">
-                                            <span class="fas fa-envelope mr-2"></span>
-                                            you@domain.com
-                                        </li>
-                                        <li class="d-flex align-items-center py-2">
-                                            <span class="fas fa-phone-alt mr-2"></span> (123)
-                                            456-7890 - (123) 456-7890
-                                        </li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span> Perinthalmanna,Malappuram</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span> fmcboat@gmail.com</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span> 9656-5656-55</li>
                                     </ul>
                                 </div>
                             </div>
@@ -550,10 +445,8 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md-5 col-lg-5">
-                        <p class="copyright-text pb-0 mb-0">
-                            Copyrights © 2020. All rights reserved by
-                            <a href="https://themeforest.net/user/themetags" target="_blank">ThemeTags</a>
-                        </p>
+                        <p class="copyright-text pb-0 mb-0">Copyrights © 2020 FMC Boat. Developed by
+                            <a href="https://datacubeinfo.com/" target="_blank">Datacube Software Solutions</a></p>
                     </div>
                     <div class="col-md-7 col-lg-6 d-none d-md-block d-lg-block">
                         <div class="social-nav text-right">

@@ -9,10 +9,7 @@ use App\service;
 
 class ServicesEnqController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     public function index()
     {
         $serviceEnq = serviceEnq::latest()->join('services', 'services.id', '=', 'service_enqs.ser_cate')

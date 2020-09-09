@@ -24,12 +24,12 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="text-center pb-2">
+                {{-- <div class="text-center pb-2">
                     <button type="button" class="filter-btn" data-mixitup-control data-filter="all">All</button>
                     <button type="button" class="filter-btn" data-mixitup-control data-filter=".branding">Branding</button>
                     <button type="button" class="filter-btn" data-mixitup-control data-filter=".animation">Animation</button>
                     <button type="button" class="filter-btn" data-mixitup-control data-filter=".other">Others</button>
-                </div>
+                </div> --}}
                 <div class="portfolio-container" id="MixItUp">
                     @foreach($product as $pro)
                     <div class="mix portfolio-item branding" data-ref="mixitup-target">
@@ -45,66 +45,7 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="mix portfolio-item other animation" data-ref="mixitup-target">
-                        <div class="portfolio-wrapper">
-                            <a href="project-details.html" target="_blank">
-                                <div class="content-overlay"></div>
-                                <img class="img-fluid" src="img/portfolios/2.jpg" alt="portfolio" />
-                                <div class="content-details fadeIn-bottom text-white">
-                                    <h5 class="text-white mb-1">Web UI/UX Design</h5>
-                                    <p>Web, Design</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mix portfolio-item animation" data-ref="mixitup-target">
-                        <div class="portfolio-wrapper">
-                            <a href="project-details.html" target="_blank">
-                                <div class="content-overlay"></div>
-                                <img class="img-fluid" src="img/portfolios/4.jpg" alt="portfolio" />
-                                <div class="content-details fadeIn-bottom text-white">
-                                    <h5 class="text-white mb-1">Corporate Flyer Design</h5>
-                                    <p>Flyer Design</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mix portfolio-item branding" data-ref="mixitup-target">
-                        <div class="portfolio-wrapper">
-                            <a href="project-details.html" target="_blank">
-                                <div class="content-overlay"></div>
-                                <img class="img-fluid" src="img/portfolios/1.jpg" alt="portfolio" />
-                                <div class="content-details fadeIn-bottom text-white">
-                                    <h5 class="text-white mb-1">Web UI/UX Design</h5>
-                                    <p>Web, Design</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mix portfolio-item animation other" data-ref="mixitup-target">
-                        <div class="portfolio-wrapper">
-                            <a href="project-details.html" target="_blank">
-                                <div class="content-overlay"></div>
-                                <img class="img-fluid" src="img/portfolios/5.jpg" alt="portfolio" />
-                                <div class="content-details fadeIn-bottom text-white">
-                                    <h5 class="text-white mb-1">Wall Painting Design</h5>
-                                    <p>Painting Design</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mix portfolio-item branding " data-ref="mixitup-target">
-                        <div class="portfolio-wrapper">
-                            <a href="project-details.html" target="_blank">
-                                <div class="content-overlay"></div>
-                                <img class="img-fluid" src="img/portfolios/6.jpg" alt="portfolio" />
-                                <div class="content-details fadeIn-bottom text-white">
-                                    <h5 class="text-white mb-1">Corporate Identity Design</h5>
-                                    <p>Corporate Design</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                   
                     <div class="gap"></div>
                     <div class="gap"></div>
                     <div class="gap"></div>
@@ -269,6 +210,14 @@
 <!--client section start-->
 <div class="client-section ptb-100 gray-light-bg">
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-heading text-center mb-5">
+                    <h5><a href="/services">Our Partners</a></h5>
+                  
+                </div>
+            </div>
+        </div>
         <!--clients logo start-->
         <div class="row align-items-center">
             <div class="col-md-12">

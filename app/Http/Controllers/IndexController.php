@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\service;
+use App\product;
 
 class IndexController extends Controller
 {
@@ -12,9 +14,10 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { {
-            return view('site.index');
-        }
+    {
+        $product = product::latest()->limit(4)->get();
+        $service = service::latest()->limit(4)->get();
+        return view('site.index', ['service' => $service, 'product' => $product]);
     }
 
     /**

@@ -45,6 +45,7 @@ class AdminProductsController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'product_name' => 'required',
             'product_disc' => 'required',
@@ -62,10 +63,11 @@ class AdminProductsController extends Controller
             //Filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extention;
             //upload Image
-            $path = $request->file('product_photo')->storeAs('public/product_photos', $fileNameToStore);
+            $path = $request->file('product_photo')->storeAs('public/products_photos', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
+        return $fileNameToStore;
         $product = new product();
         $product->product_name = request('product_name');
         $product->product_disc = request('product_disc');

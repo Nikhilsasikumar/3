@@ -114,7 +114,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form" method="post" action="/admin/products/table">
+                <form class="form" method="post" action="/admin/products/table" enctype="multipart/form-data">
                     @csrf
                     <!--begin::Body-->
                     <div class="card-body">

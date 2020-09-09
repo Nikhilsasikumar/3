@@ -55,12 +55,11 @@
                         <i class="symbol-badge bg-success"></i>
                     </div>
                     <div>
-                        <a href="#" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary">{{$profile->first_name}} {{$profile->last_name}}</a>
+                        <a href="#" class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary">{{$profile->name}}</a>
                         <div class="text-muted">Admin</div>
-                        <div class="mt-2">
-                            <a href="#" class="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1">Chat</a>
-                            <a href="#" class="btn btn-sm btn-success font-weight-bold py-2 px-3 px-xxl-5 my-1">Follow</a>
-                        </div>
+                        
+                    <div class="text-muted">Since {{$profile->created_at}}</div>
+                        
                     </div>
                 </div>
                 <!--end::User-->
@@ -102,7 +101,7 @@
                         </a>
                     </div>
                     <div class="navi-item mb-2">
-                        <a href="/admin/profile/account" class="navi-link py-4">
+                        <a href="/admin/profile/siteinfos" class="navi-link py-4">
                             <span class="navi-icon mr-2">
                                 <span class="svg-icon">
                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Code/Compiling.svg-->
@@ -116,7 +115,7 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </span>
-                            <span class="navi-text font-size-lg">Account Information</span>
+                            <span class="navi-text font-size-lg">Site Information</span>
                         </a>
                     </div>
                     <div class="navi-item mb-2">
