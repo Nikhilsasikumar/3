@@ -45,11 +45,32 @@ class AdminProductsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'product_name' => 'required',
+            'product_disc' => 'required',
+            'product_cate' => 'required',
+            'product_photo' => 'image|nullable|max:1999'
+        ]);
+        //Handle File Upload
+        if ($request->hasFile('product_photo')) {
+            //GET File with Extension
+            $fileNameWithExt = $request->file('product_photo')->getClientOriginalName();
+            //GET Just file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            //GET just Ext
+            $extention = $request->file('product_photo')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extention;
+            //upload Image
+            $path = $request->file('product_photo')->storeAs('public/product_photos', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
         $product = new product();
         $product->product_name = request('product_name');
         $product->product_disc = request('product_disc');
         $product->product_cate = request('product_cate');
-        $product->product_photo = request('product_photo');
+        $product->product_photo = $fileNameToStore;
         $product->save();
         return redirect("/admin/products/table");
         // return request('product_name');

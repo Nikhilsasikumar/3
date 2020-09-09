@@ -205,9 +205,9 @@
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span> 1234 Street Name, City Name, USA</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span> you@domain.com</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span> (123) 456-7890 - (123) 456-7890</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span> Perinthalmanna,Malappuram</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span> fmcboat@gmail.com</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span> 9656-5656-55</li>
                                     </ul>
                                 </div>
                             </div>
@@ -223,9 +223,8 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md-5 col-lg-5">
-                        <p class="copyright-text pb-0 mb-0">Copyrights © 2020. All
-                            rights reserved by
-                            <a href="https://themeforest.net/user/themetags" target="_blank">ThemeTags</a></p>
+                        <p class="copyright-text pb-0 mb-0">Copyrights © 2020 FMC Boat. Developed by
+                            <a href="https://datacubeinfo.com/" target="_blank">Datacube Software Solutions</a></p>
                     </div>
                     <div class="col-md-7 col-lg-6 d-none d-md-block d-lg-block">
                         <div class="social-nav text-right">
