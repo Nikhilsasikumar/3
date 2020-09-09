@@ -77,10 +77,10 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <span class="fas fa-envelope mr-1"></span>
-                                    <a href="mailto:support@yourdomain.com">fmcboat@gmail.com</a>
+                                    <a href="mailto:{{$siteinfo->phone}}">{{$siteinfo->email}}</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <span class="fas fa-map-marker mr-1"></span>Perinthalmanna,Malappuram
+                                    <span class="fas fa-map-marker mr-1"></span>{{$siteinfo->address1}}
                                 </li>
                             </ul>
                         </div>
@@ -90,7 +90,7 @@
                             <ul class="list-inline text-md-right text-lg-right text-left">
                                 <li class="list-inline-item">
                                     <span class="ti-phone mr-2"></span> Call Now:
-                                    <strong>9656-6666-66</strong>
+                                    <strong>{{$siteinfo->phone}}</strong>
                                 </li>
                             </ul>
                         </div>
@@ -427,9 +427,9 @@
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span> Perinthalmanna,Malappuram</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span> fmcboat@gmail.com</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span> 9656-5656-55</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>{{$siteinfo->address1}}</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>{{$siteinfo->email}}</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>{{$siteinfo->phone}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -452,20 +452,20 @@
                         <div class="social-nav text-right">
                             <ul class="list-unstyled social-list mb-0">
                                 <li class="list-inline-item tooltip-hover">
-                                    <a href="#" class="rounded"><span class="ti-facebook"></span></a>
+                                    <a href="{{$siteinfo->facebook}}" class="rounded"><span class="ti-facebook"></span></a>
                                     <div class="tooltip-item">Facebook</div>
                                 </li>
                                 <li class="list-inline-item tooltip-hover">
-                                    <a href="#" class="rounded"><span class="ti-twitter"></span></a>
+                                    <a href="{{$siteinfo->twitter}}" class="rounded"><span class="ti-twitter"></span></a>
                                     <div class="tooltip-item">Twitter</div>
                                 </li>
                                 <li class="list-inline-item tooltip-hover">
-                                    <a href="#" class="rounded"><span class="ti-linkedin"></span></a>
+                                    <a href="{{$siteinfo->linkedin}}" class="rounded"><span class="ti-linkedin"></span></a>
                                     <div class="tooltip-item">Linkedin</div>
                                 </li>
                                 <li class="list-inline-item tooltip-hover">
-                                    <a href="#" class="rounded"><span class="ti-dribbble"></span></a>
-                                    <div class="tooltip-item">Dribbble</div>
+                                    <a href="{{$siteinfo->instagram}}" class="rounded"><span class="ti-instagram"></span></a>
+                                    <div class="tooltip-item">Instagram</div>
                                 </li>
                             </ul>
                         </div>

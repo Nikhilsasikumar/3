@@ -6,10 +6,8 @@ Route::get('/', 'IndexController@index');
 Route::get('/services', 'ServicesController@index');
 Route::get('/products', 'ProductsController@index');
 Route::get('/contact', 'ContactsController@index');
+Route::get('/about', 'AboutsController@index');
 
-Route::get('/about', function () {
-    return view('site.about');
-});
 Route::post('/services/enquery', 'ServicesEnqController@store');
 Route::get('/thankyou', function () {
     return view('site.thankyou');
@@ -60,7 +58,7 @@ Route::put('/admin/product/{id}', 'ProductEnqController@update');
 Route::get('/admin/profile', 'AdminController@index');
 Route::put('/admin/profile/{id}', 'AdminController@update');
 Route::get('/admin/profile/siteinfos', 'SiteinfosController@index');
-Route::put('/admin/profile/siteinfos/{id}', 'SiteinfosController@updateacc');
+Route::put('/admin/profile/siteinfos/{id}', 'SiteinfosController@update');
 Route::get('/admin/profile/password', 'AdminController@password');
 Route::put('/admin/profile/password{id}', 'AdminController@updatepass');
 // Route::post('/admin/services/table', 'AdminServicesController@store');

@@ -154,41 +154,52 @@
             <!--begin::Header-->
             <div class="card-header py-3">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">Account
+                    <h3 class="card-label font-weight-bolder text-dark">Publick Site
                         Information</h3>
                     <span class="text-muted font-weight-bold font-size-sm mt-1">Change
-                        your account settings</span>
-                </div>
+                        Your Site Info</span>
+                </div> <form class="form" method="post" action="/admin/profile/siteinfos/1">
+                    @csrf
+                    @method("PUT")
                 <div class="card-toolbar">
-                    <button type="reset" class="btn btn-success mr-2">Save
+                    <button type="submite" class="btn btn-success mr-2">Save
                         Changes</button>
                     <button type="reset" class="btn btn-secondary">Cancel</button>
                 </div>
             </div>
             <!--end::Header-->
             <!--begin::Form-->
-            <form class="form">
+            
                 <div class="card-body">
                     <!--begin::Heading-->
                     <div class="row">
                         <label class="col-xl-3"></label>
                         <div class="col-lg-9 col-xl-6">
-                            <h5 class="font-weight-bold mb-6">Account:</h5>
+                            <h5 class="font-weight-bold mb-6">Site Info:</h5>
                         </div>
                     </div>
+                    
+                    
                     <!--begin::Form Group-->
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Username</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                         <div class="col-lg-9 col-xl-6">
-                            <div class="spinner spinner-sm spinner-success spinner-right">
-                                <input class="form-control form-control-lg form-control-solid" disabled type="text" value="" />
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-phone"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="phone"value="{{$siteinfo->phone}}" placeholder="Phone Number" />
                             </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
                         </div>
                     </div>
-                    <!--begin::Form Group-->
+                     <!--begin::Form Group-->
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Email
-                            Address</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Email</label>
                         <div class="col-lg-9 col-xl-6">
                             <div class="input-group input-group-lg input-group-solid">
                                 <div class="input-group-prepend">
@@ -196,8 +207,132 @@
                                         <i class="la la-at"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control form-control-lg form-control-solid" value="{{$profile->email}}" placeholder="Email" />
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="email" value="{{$siteinfo->email}}" placeholder="Email" />
                             </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">WhatsApp</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-whatsapp"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="whatsapp" value="{{$siteinfo->whatsapp}}" placeholder="WhatsApp Number" />
+                            </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Address 1</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-map"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="address1" value="{{$siteinfo->address1}}" placeholder="Address 1" />
+                            </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Address 2</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-map"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="address2" value="{{$siteinfo->address2}}" placeholder="Address 2" />
+                            </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">FaceBook</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-facebook"></i>
+                                    </span>
+                                </div>
+                                <div class="spinner spinner-sm spinner-success spinner-right">
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="facebook" value="{{$siteinfo->facebook}}" placeholder="Facebook url" />
+                            </div></div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Twitter</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-twitter"></i>
+                                    </span>
+                                </div>
+                                <div class="spinner spinner-sm spinner-success spinner-right">
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="twitter" value="{{$siteinfo->twitter}}" placeholder="Twitter url" />
+                            </div></div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">LinkedIn</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-linkedin"></i>
+                                    </span>
+                                </div>
+                                <div class="spinner spinner-sm spinner-success spinner-right">
+                                <input type="text" class="form-control form-control-lg form-control-solid"  name="linkedin" value="{{$siteinfo->linkedin}}" placeholder="LinkedIn url" />
+                            </div></div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                     <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Instagram</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="la la-instagram"></i>
+                                    </span>
+                                </div>
+                                <div class="spinner spinner-sm spinner-success spinner-right">
+                                <input type="text" class="form-control form-control-lg form-control-solid" name="instagram"value="{{$siteinfo->instagram}}" placeholder="Instagram url" />
+                            </div></div>
                             <span class="form-text text-muted">Email will not be
                                 publicly displayed.
 
@@ -214,54 +349,41 @@
                             </select>
                         </div>
                     </div>
-
-
-                    <div class="form-group row align-items-center">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Communication</label>
-                        <div class="col-lg-9 col-xl-6">
-                            <div class="checkbox-inline">
-                                <label class="checkbox">
-                                    <input type="checkbox" checked="checked" />
-                                    <span></span>Email</label>
-                                <label class="checkbox">
-                                    <input type="checkbox" checked="checked" />
-                                    <span></span>SMS</label>
-                                <label class="checkbox">
-                                    <input type="checkbox" />
-                                    <span></span>Phone</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--begin::Form Group-->
-                    <div class="separator separator-dashed my-5"></div>
-                    <!--begin::Form Group-->
-                    <div class="row">
-                        <label class="col-xl-3"></label>
-                        <div class="col-lg-9 col-xl-6">
-                            <h5 class="font-weight-bold mb-6">Security:</h5>
-                        </div>
-                    </div>
-
-                    <!--begin::Form Group-->
+ <!--begin::Form Group-->
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Password reset
-                            verification</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Email</label>
                         <div class="col-lg-9 col-xl-6">
-                            <div class="checkbox-inline">
-                                <label class="checkbox m-0">
-                                    <input type="checkbox" />
-                                    <span></span>Require personal information to reset
-                                    your password.</label>
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker"></i>
+                                    </span>
+                                </div>
+                                <textarea name="map"  class="form-control" rows="5" cols="25" placeholder="Map Direction url">{{$siteinfo->map}}</textarea>
                             </div>
-                            <p class="form-text text-muted py-2">For extra security,
-                                this requires you to confirm your email or phone number
-                                when you reset your password.
-                                <a href="#" class="font-weight-boldk">Learn more</a>.
-                            </p>
-                            <button type="button" class="btn btn-light-danger font-weight-bold btn-sm">Deactivate
-                                your account ?</button>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
                         </div>
                     </div>
+ <!--begin::Form Group-->
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Email</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="input-group input-group-lg input-group-solid">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker"></i>
+                                    </span>
+                                </div>
+                                <textarea name="mapdirection"  class="form-control" rows="5" cols="25" placeholder="Map Direction url">{{$siteinfo->mapdirection}}</textarea>
+                            </div>
+                            <span class="form-text text-muted">Email will not be
+                                publicly displayed.
+
+                        </div>
+                    </div>
+                   
                 </div>
             </form>
             <!--end::Form-->

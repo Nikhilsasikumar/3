@@ -20,10 +20,13 @@ class CreateSiteinfosTable extends Migration
             $table->string('email', 25);
             $table->string('address1', 250);
             $table->string('address2', 250);
-            $table->string('facebook', 25);
-            $table->string('twitter', 25);
-            $table->string('instagram', 25);
-            $table->string('linkedin', 25);
+            $table->string('facebook', 255);
+            $table->string('twitter', 255);
+            $table->string('instagram', 255);
+            $table->string('linkedin', 255);
+            $table->string('map', 1500);
+            $table->string('mapdirection', 1500);
+
             $table->timestamps();
         });
     }

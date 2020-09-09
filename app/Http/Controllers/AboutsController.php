@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\siteinfo;
 
-class ContactsController extends Controller
+class AboutsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ContactsController extends Controller
     public function index()
     {
         $siteinfo = siteinfo::latest()->first();
-        return view('site.contact', ['siteinfo' => $siteinfo]);
+        return view('site.about', ['siteinfo' => $siteinfo]);
     }
 
     /**

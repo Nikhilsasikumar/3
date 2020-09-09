@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\service;
+use App\siteinfo;
 
 class ServicesController extends Controller
 {
@@ -15,7 +16,8 @@ class ServicesController extends Controller
     public function index()
     {
         $service = service::latest()->get();
-        return view('site.services', ['service' => $service]);
+        $siteinfo = siteinfo::latest()->first();
+        return view('site.services', ['service' => $service, 'siteinfo' => $siteinfo]);
         // return $service;
     }
 
@@ -50,7 +52,8 @@ class ServicesController extends Controller
     {
 
         $service = service::find($id);
-        return view('site.service', ['service' => $service]);
+        $siteinfo = siteinfo::latest()->first();
+        return view('site.service', ['service' => $service, 'siteinfo' => $siteinfo]);
     }
 
     /**
