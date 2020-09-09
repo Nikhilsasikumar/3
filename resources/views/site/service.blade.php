@@ -17,9 +17,9 @@
         <div class="row">
             <div class="col-lg-8 col-md-8">
                 <div class="service-details-wrap">
-                    <img src="/img/slider-img-2.jpg" alt="services" class="img-fluid rounded shadow-sm" />
+                <img src="/storage/service_photos/{{$service->service_photo}}" alt="{{$service->service_name}}" class="img-fluid rounded shadow-sm" />
                     <div class="services-detail-content mt-4">
-                        <h4>Services Details</h4>
+                        <h4>Service Details</h4>
                         <p>{{$service->service_disc}}</p>
 
                         <p>Seamlessly coordinate high-quality functionalities and bricks-and-clicks methods of

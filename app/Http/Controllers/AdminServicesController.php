@@ -41,11 +41,32 @@ class AdminServicesController extends Controller
     }
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'service_name' => 'required',
+            'service_disc' => 'required',
+            'service_cate' => 'required',
+            'service_photo' => 'image|nullable|max:1999'
+        ]);
+        //Handle File Upload
+        if ($request->hasFile('service_photo')) {
+            //GET File with Extension
+            $fileNameWithExt = $request->file('service_photo')->getClientOriginalName();
+            //GET Just file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            //GET just Ext
+            $extention = $request->file('service_photo')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extention;
+            //upload Image
+            $path = $request->file('service_photo')->storeAs('public/service_photos', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
         $service = new service();
         $service->service_name = request('service_name');
         $service->service_disc = request('service_disc');
         $service->service_cate = request('service_cate');
-        $service->service_photo = request('service_photo');
+        $service->service_photo = $fileNameToStore;
         $service->save();
         return redirect("/admin/services");
         // return request('service_name');

@@ -110,7 +110,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form" method="post" action="/admin/services/table">
+                <form class="form" method="post" action="/admin/services/table" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="row">
@@ -208,7 +208,7 @@
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">Photo</label>
                             <div class="col-lg-9 col-xl-6">
                                 <div class="image-input image-input-outline" id="kt_profile_avatar" style="background-image: url(/admin/media/users/blank.png)">
-                                    <div class="image-input-wrapper" style="background-image: url(/admin/media/users/300_21.jpg)">
+                                    <div id="bak_img"class="image-input-wrapper" >
                                     </div>
                                     <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
                                         <i class="fa fa-pen icon-sm text-muted"></i>
@@ -284,6 +284,9 @@
                     $('#service_disc').val(html.data[0].service_disc);
                     $('#selected_cate').val(html.data[0].service_cate);
                     $('#selected_cate').html(html.data[0].cate_name);
+                    var url=html.data[0].service_photo ;
+                    console.log(url);
+                    $('#bak_img').css("background-image","url(/storage/service_photos/"+url+")");
                     $.each(html.categories, function(key, val) {
                         $("#categories").append("<option value='" + val.id + "'>" + val.cate_name + "</option>");
                     });
