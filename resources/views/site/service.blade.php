@@ -1,13 +1,6 @@
 @extends("site.app")
 @section("page_title")
 <h1 class="text-white mb-0">{{$service->service_name}}</h1>
-<!-- <div class="custom-breadcrumb">
-    <ol class="breadcrumb d-inline-block bg-transparent list-inline py-0">
-        <li class="list-inline-item breadcrumb-item"><a href="/">HOME</a></li>
-        <li class="list-inline-item breadcrumb-item active">SERVICES</li>
-        <li class="list-inline-item breadcrumb-item active">SERVICE</li>
-    </ol>
-</div> -->
 @endsection
 
 @section("page_content")
@@ -20,35 +13,8 @@
                 <img src="/storage/service_photos/{{$service->service_photo}}" alt="{{$service->service_name}}" class="img-fluid rounded shadow-sm" />
                     <div class="services-detail-content mt-4">
                         <h4>Service Details</h4>
-                        <p>{{$service->service_disc}}</p>
+                        {{$service->service_disc}}
 
-                        <p>Seamlessly coordinate high-quality functionalities and bricks-and-clicks methods of
-                            empowerment. Authoritatively cultivate adaptive bandwidth and collaborative intellectual
-                            capital. Uniquely build open-source experiences without market positioning customer
-                            service. Dramatically strategize resource sucking outsourcing through state of the art
-                            vortals. Quickly aggregate enterprise portals with cross-platform e-business.</p>
-                        <ul class="list-unstyled tech-feature-list mb-3">
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Foreclosure</strong>
-                                consultant Human consulting
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Corporate</strong>
-                                Immigration, Information
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>SEO</strong> Optimization consultant</li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Rapidiously</strong> conceptualize communities</li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Consultant</strong>
-                                pharmacist Creative consultant
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Monotonectally</strong>
-                                customize B2B core competencies
-                            </li>
-                        </ul>
-
-                        <p>Enthusiastically matrix future-proof internal or "organic" sources through covalent
-                            communities. Synergistically incubate reliable metrics whereas client-focused
-                            technologies. Completely embrace multifunctional scenarios without orthogonal benefits.
-                            Competently enhance equity invested data with performance based niches. Assertively
-                            aggregate professional catalysts for change metrics.</p>
 
                     </div>
                 </div>

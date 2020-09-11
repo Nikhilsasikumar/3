@@ -132,7 +132,7 @@
                 <div class="row">
                     <div class="col-md-7 col-lg-6">
                         <div class="hero-slider-content">
-                            <span class="text-uppercase">Total Business Solutions</span>
+                            <span class="text-uppercase">Freelance Marketing Company</span>
                             <h1>Your Most Trusted Business Partner</h1>
                             <p class="lead">
                                 Holisticly procrastinate mission-critical convergence with
@@ -154,48 +154,38 @@
         <section class="promo-block ptb-100 mt--165 z-index position-relative">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-lg-4">
-                        <div class="single-promo-block promo-hover-bg-1 hover-image shadow-lg p-5 custom-radius white-bg">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="core-services-single single-promo-block promo-hover-bg-1 hover-image shadow-lg p-5 custom-radius white-bg">
                             <div class="promo-block-icon mb-3">
                                 <span class="fab fa-superpowers icon-md color-primary"></span>
                             </div>
                             <div class="promo-block-content">
-                                <h5>Tax Return Filing</h5>
+                                <h5>Best Quality Services</h5>
                                 <p>
-                                    Compellingly promote collaborative products without
-                                    synergistic schemas.
+                                Boat FMC  provides many services directly and with our strong, reputed, 
+                            qualified, legally approved associates. We help clients to reduce costs, negotiate prices, compare products, etc.
+
                                 </p>
                             </div>
+                            <a href="/services" class="icon-link secondary-bg"><span class="ti-angle-double-right"></span></a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4">
-                        <div class="single-promo-block promo-hover-bg-2 hover-image shadow-lg p-5 custom-radius white-bg">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="core-services-single single-promo-block promo-hover-bg-2 hover-image shadow-lg p-5 custom-radius white-bg">
                             <div class="promo-block-icon mb-3">
                                 <span class="far fa-clock icon-md color-primary"></span>
                             </div>
                             <div class="promo-block-content">
-                                <h5>Cyber Security</h5>
+                                <h5>Best Products</h5>
                                 <p>
-                                    Enthusiastically scale mission-critical imperatives rather
-                                    than an expanded array.
+                                Boat FMC providing high-quality products for wholesale buyers. Trusted By thousand of buyers in India. We bridging the gap between buyers and quality Product suppliers
+                            
                                 </p>
                             </div>
+                            <a href="/products" class="icon-link secondary-bg"><span class="ti-angle-double-right"></span></a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-lg-4">
-                        <div class="single-promo-block promo-hover-bg-3 hover-image shadow-lg p-5 custom-radius white-bg">
-                            <div class="promo-block-icon mb-3">
-                                <span class="fas fa-headphones-alt icon-md color-primary"></span>
-                            </div>
-                            <div class="promo-block-content">
-                                <h5>Cloud Services</h5>
-                                <p>
-                                    Rapidiously create cooperative resources rather than
-                                    client-based leadership skills.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -209,31 +199,26 @@
                         <div class="section-heading text-center mb-5">
                             <h2><a href="/services">We Provide Best Quality Services</a></h2>
                             <p class="lead">
-                                Efficiently aggregate end-to-end core competencies without
-                                maintainable ideas. Dynamically foster tactical solutions
-                                without enabled value.
+                            The following are the leading quality services provided by FMC Boat
                             </p>
                         </div>
                     </div>
                 </div>
+              
                 <div class="row">
-                    @foreach($service as $ser)
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                            <div class="service-icon mr-4">
-                                <span class="ti-briefcase icon-md color-secondary"></span>
-                            </div>
-                            <div class="services-content-wrap">
-                                <h5>{{$ser->service_name}}</h5>
-                                <p class="mb-0">
-                                    {{$ser->service_disc}}
-                                </p>
-                            <a href="/service/{{$ser->id}}"class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
-                            </div>
-                        </div>
+                @foreach($service as $ser)
+                <div class="col-md-6 col-lg-4" style="
+    margin-bottom: 15px;">
+                    <div class="card single-promo-card single-promo-hover text-center shadow-sm">
+                    <div class="feature-feature-list p-4 text-center">
+                        <span class="{{$ser->service_icon}} icon-sm d-block color-secondary mb-3"></span>
+                        <h5 class="mb-2">{{$ser->service_name}}</h5>
+                        <p>{{substr($ser->service_disc,0,80)}}</p>
+                        <a href="/service/{{$ser->id}}" class="detail-link mt-3">More Details <span class="ti-arrow-right"></span></a>
                     </div>
-                    @endforeach
-                </div>
+                </div> </div>
+                @endforeach
+            </div>
             </div>
         </section>
         <!--services section end-->
@@ -339,9 +324,9 @@
     <footer class="footer-section">
         <!--footer top start-->
         <div class="footer-top gradient-bg">
-            <div class="container">
+        <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="row footer-top-wrap">
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
@@ -379,62 +364,33 @@
                                             <a class="nav-link" href="#">Check Our Careers</a>
                                         </li>
                                     </ul>
+
                                 </div>
                             </div>
+                          
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">LEGAL</h4>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Legal Information</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Privacy Policy</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Report Abuse</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Terms of Service</a>
-                                        </li>
-                                    </ul>
+                                    <h4 class="text-white">Account</h4>
+                                    <a href="/services" class="btn secondary-solid-btn">Login</a>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">SUPPORT</h4>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Contact</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Knowledge Base</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Forums</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">System Status</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+<div class="col-md-3">
                         <div class="row footer-top-wrap">
                             <div class="col-12">
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>{{$siteinfo->address1}}</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>{{$siteinfo->email}}</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>{{$siteinfo->phone}}</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>Perinthalmanna</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>nikhilsasikumar1@gmail.co</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>9656676466</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        </div>
+                    </div>
+                     
                 </div>
             </div>
         </div>

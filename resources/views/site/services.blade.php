@@ -10,51 +10,17 @@
 @endsection
 
 @section("page_content")
-<section class="promo-block ptb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-lg-4">
-                <div class="single-promo-block promo-hover-bg-1 hover-image shadow-lg p-5 rounded">
-                    <div class="promo-block-icon mb-3">
-                        <span class="ti-vector icon-md color-primary"></span>
-                    </div>
-                    <div class="promo-block-content">
-                        <h5>Creative Design</h5>
-                        <p>Compellingly promote collaborative products without synergistic schemas. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4">
-                <div class="single-promo-block promo-hover-bg-2 hover-image shadow-lg p-5 rounded">
-                    <div class="promo-block-icon mb-3">
-                        <span class="ti-lock icon-md color-primary"></span>
-                    </div>
-                    <div class="promo-block-content">
-                        <h5>Cyber Security</h5>
-                        <p>Enthusiastically scale mission-critical imperatives rather than an expanded array.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4">
-                <div class="single-promo-block promo-hover-bg-3 hover-image shadow-lg p-5 rounded">
-                    <div class="promo-block-icon mb-3">
-                        <span class="ti-cloud icon-md color-primary"></span>
-                    </div>
-                    <div class="promo-block-content">
-                        <h5>Cloud Services</h5>
-                        <p>Rapidiously create cooperative resources rather than client-based leadership skills.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--promo block with hover effect end-->
+
+
 
 <!--services section start-->
 <section class="services-section ptb-100 gray-light-bg">
-    <div class="container">
-        <div class="row justify-content-center">
+    
+       
+
+            <div class="container">
+            <div class="row">
+            <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="section-heading text-center mb-4">
                     <h2>First Class Business Solutions for You</h2>
@@ -63,26 +29,56 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+            </div>
+            <div class="row">
             @foreach($service as $ser)
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="services-single d-flex p-5 my-md-3 my-lg-3 my-sm-0 shadow-sm white-bg rounded">
-                    <div class="service-icon mr-4">
-                        <span class="ti-briefcase icon-md color-secondary"></span>
-                    </div>
-                    <div class="services-content-wrap">
-                        <h5>{{$ser->service_name}}</h5>
-                        <p class="mb-0">{{$ser->service_disc}}</p>
-                        <a href="service/{{$ser->id}}" class="detail-link mt-3">Read more <span class="ti-arrow-right"></span></a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-blog-card card border-0 shadow-sm">
+                        <div class="blog-img">
+                            <a href="#"><span class="category position-absolute">Available</span></a>
+                            <a href="#"><img src="/storage/service_photos/{{$ser->service_photo}}" class="card-img-top position-relative img-fluid" alt="blog"></a>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5 mb-2 card-title"><a href="service/{{$ser->id}}">{{$ser->service_name}}</a></h3>
+                            <p class="card-text">{{substr($ser->service_disc,0,120)}}</p>
+                        </div>
+                        <div class="card-footer border-0 d-flex align-items-center justify-content-between">
+                            <div class="author-meta d-flex align-items-center">
+                                <!-- <span class="fa fa-user mr-2 p-3 bg-white rounded-circle border"></span>
+                                <div class="author-content">
+                                    <a href="#" class="d-block">ThemeTags</a>
+                                    <small>May 26, 2020</small>
+                                </div> -->
+                            </div>
+                            <div class="author-like">
+                                <a href="service/{{$ser->id}}">View Details &nbsp<span class="fa fa-arrow-right"></span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                @endforeach
+               
             </div>
-            @endforeach
-
-
+            
+                            
+                            
+            <!--pagination start-->
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="custom-pagination-nav mt-4">
+                        <ul class="pagination justify-content-center">
+                        {{ $service->links() }}
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--pagination end-->
 
         </div>
-    </div>
+
+        
+ 
 </section>
 <!--services section end-->
 

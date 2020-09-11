@@ -17,7 +17,7 @@ class IndexController extends Controller
     public function index()
     {
         $product = product::latest()->limit(4)->get();
-        $service = service::latest()->limit(4)->get();
+        $service = service::latest()->limit(6)->get();
         $siteinfo = siteinfo::latest()->first();
         return view('site.index', ['service' => $service, 'product' => $product, 'siteinfo' => $siteinfo]);
     }

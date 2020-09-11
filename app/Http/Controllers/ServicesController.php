@@ -15,7 +15,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $service = service::latest()->get();
+        $service = service::latest()->paginate(9);
         $siteinfo = siteinfo::latest()->first();
         return view('site.services', ['service' => $service, 'siteinfo' => $siteinfo]);
         // return $service;

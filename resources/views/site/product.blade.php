@@ -10,86 +10,80 @@
 </div> -->
 @endsection
 
+
 @section("page_content")
-<!--project details section start-->
-<section class="project-details-section ptb-100">
+<!--services details start-->
+<section class="service-details-section ptb-100">
     <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-12 col-lg-8">
-                <div class="img-wrap mb-md-4 mb-lg-0">
-                    <img src="/img/hero-bg7.jpg" alt="project" class="img-fluid rounded shadow-sm" />
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
-                <!--all services list-->
-                <aside class="widget widget-categories">
-                    <div class="widget-title">
-                        <h5>Product Details</h5>
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="service-details-wrap">
+                <img src="/storage/product_photos/{{$product->product_photo}}" alt="{{$product->product_name}}" class="img-fluid rounded shadow-sm" />
+                    <div class="services-detail-content mt-4">
+                        <h4>Product Details</h4>
+                        <p>{{$product->product_disc}}</p>
+
                     </div>
-                    <ul class="list-unstyled tech-feature-list">
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Foreclosure</strong>
-                            consultant Human resource consulting
-                        </li>
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Corporate</strong>
-                            Immigration consultant, Information consulting
-                        </li>
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>SEO</strong> Optimization Creative consultant</li>
-                        <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Rapidiously</strong> conceptualize strategic before communities</li>
-                    </ul>
-                </aside>
-            </div>
-        </div>
-
-        <!--project details row start-->
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <div class="project-details-content">
-                    <h5>Product Description</h5>
-                    <p>{{$product->product_disc}}</p>
-
                 </div>
             </div>
-        </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="sidebar-right pl-4">
+                    <!--need help-->
 
-        <div class="align-items-center justify-content-center col-md-6">
 
-            <div class="widget-title">
-                <br>
-                <h5>Need Help?</h5>
+                    <!-- Subscribe widget-->
+                    <aside class="widget widget-categories">
+                        <div class="widget-title">
+                            <h5>Need Help?</h5>
+                        </div>
+                        <p>Fill your details below, our agent will contact you shorty</p>
+                        <form action="/product/enquery" method="post">
+                            @csrf
+                            <input type="hidden" id="product" name="product" value="{{$product->product_cate}}" placeholder="service">
+                            <input type="hidden" type="hidden" id="pro_cate" name="pro_cate" value="{{$product->id}}" placeholder="service">
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="fullname" name="fullname" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="phone" name="phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="place" name="place" placeholder="Place" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="district" name="district" placeholder="District" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input" id="qty" name="qty" placeholder="Required Quantity" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn secondary-solid-btn btn-block btn-not-rounded mt-3">Submit
+                            </button>
+                        </form>
+                    </aside>
+                    <aside class="widget widget-recent-entries-custom">
+                            <div class="widget-title">
+                                <h6>Related Products</h6>
+                            </div>
+                            <ul>
+                            @foreach($products as $prod)
+                                <li class="clearfix">
+                                    <div class="wi"><a href="/product/{{$prod->id}}"><img src="/storage/product_photos/{{$prod->product_photo}}" alt="recent post" class="img-fluid rounded"></a></div>
+                                    <div class="wb"><strong >{{$prod->product_name}}</strong><a href="/product/{{$prod->id}}">{{$product->product_disc}}</a></div>
+                                </li>
+                                @endforeach
+                                
+                            </ul>
+                        </aside>
+
+                </div>
             </div>
-            <p>Fill your details below, our agent will contact you shorty</p>
-            <form action="/product/enquery" method="post">
-                @csrf
-                <input type="hidden" id="product" name="product" value="{{$product->product_cate}}">
-                <input type="hidden" id="pro_cate" name="pro_cate" value="{{$product->id}}">
-                <div class="form-group">
-                    <input type="text" class="form-control input" id="fullname" name="fullname" placeholder="Full Name" required="">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input" id="phone" name="phone" placeholder="Phone Number" required="">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input" id="place" name="place" placeholder="Place" required="">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input" id="district" name="district" placeholder="District" required="">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input" id="qty" name="qty" placeholder="Required Quantity" required="">
-                </div>
-                <div class="form-group">
-                    <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
-                </div>
-                <button type="submit" class="btn secondary-solid-btn btn-block btn-not-rounded mt-3">Submit
-                </button>
-            </form>
-
         </div>
-
-        <!--project details row end-->
     </div>
 </section>
-<!--project details section end-->
+<!--services details end-->
 
 <!--call to action section start-->
 <section class="call-to-action py-5 gray-light-bg">
@@ -110,4 +104,5 @@
     </div>
 </section>
 <!--call to action section end-->
+
 @endsection

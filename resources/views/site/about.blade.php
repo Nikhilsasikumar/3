@@ -92,8 +92,8 @@
                         </div>
                     </div>
                     <div class="action-btns mt-4">
-                        <a href="#" class="btn primary-solid-btn mr-2">View Our Services</a>
-                        <a href="#" class="btn outline-btn">Contact Us</a>
+                        <a href="/services" class="btn primary-solid-btn mr-2"> Our Services</a>
+                        <a href="/products" class="btn secondary-solid-btn mr-2">Our Products</a>
                     </div>
                 </div>
 
@@ -170,117 +170,6 @@
 </section>
 <!--our work process section end-->
 
-<!--team two section start-->
-<section class="team-two-section ptb-100">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-8">
-                <div class="section-heading text-center mb-5">
-                    <h2>Meet our lovely team</h2>
-                    <p class="lead">Distinctively grow go forward manufactured products and optimal networks. Globally administrate 24/7 interfaces and end-to-end platforms.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="staff-member">
-                    <div class="card gray-light-bg text-center border-0">
-                        <img src="img/team-1.jpg" alt="team image" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="teacher mb-0">Richard Ford</h5>
-                            <span>Instructor of Mathematics</span>
-                            <ul class="list-inline pt-2 social">
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overlay d-flex align-items-center justify-content-center">
-                        <div class="overlay-inner">
-                            <p class="teacher-quote">"Dramatically leverage existing fully researched platforms vis-a-vis viral." </p><a href="#" class="teacher-name">
-                                <h5 class="mb-0 teacher text-white">Richard Ford</h5>
-                            </a>
-                            <span class="teacher-field text-white">Instructor of Mathematics</span>
-                            <ul class="list-inline py-4 social">
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
-                            </ul>
-                            <p class="teacher-see-profile">
-                                <a href="#" class="btn outline-white-btn">View my profile</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="staff-member">
-                    <div class="card gray-light-bg text-center border-0">
-                        <img src="img/team-3.jpg" alt="team image" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="teacher mb-0">Kely Roy</h5>
-                            <span>Lead Designer</span>
-                            <ul class="list-inline pt-2 social">
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overlay d-flex align-items-center justify-content-center">
-                        <div class="overlay-inner">
-                            <p class="teacher-quote">"Credibly extend high-payoff web-readiness via top-line relationships." </p><a href="#" class="teacher-name">
-                                <h5 class="mb-0 teacher text-white">Kely Roy</h5>
-                            </a><span class="teacher-field text-white">Lead Designer</span>
-                            <ul class="list-inline py-4 social">
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
-                            </ul>
-                            <p class="teacher-see-profile">
-                                <a href="#" class="btn outline-white-btn">View my profile</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="staff-member">
-                    <div class="card gray-light-bg text-center border-0">
-                        <img src="img/team-2.jpg" alt="team image" class="img-fluid">
-                        <div class="card-body">
-                            <h5 class="teacher mb-0">Gerald Nichols</h5>
-                            <span>Managing Director</span>
-                            <ul class="list-inline pt-2 social">
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overlay d-flex align-items-center justify-content-center">
-                        <div class="overlay-inner">
-                            <p class="teacher-quote">"Authoritatively evolve stand-alone e-tailers whereas prospective partnerships." </p><a href="#" class="teacher-name">
-                                <h5 class="mb-0 teacher text-white">Gerald Nichols</h5>
-                            </a>
-                            <span class="teacher-field text-white">Managing Director</span>
-                            <ul class="list-inline py-4 social">
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
-                                <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
-                            </ul>
-                            <p class="teacher-see-profile">
-                                <a href="#" class="btn app-store-btn">View my profile</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--team two section end-->
 
 <!--testimonial section start-->
 <section class="testimonial-section ptb-100 gray-light-bg">

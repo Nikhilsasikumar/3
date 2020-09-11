@@ -116,9 +116,9 @@
     <footer class="footer-section">
         <!--footer top start-->
         <div class="footer-top gradient-bg">
-            <div class="container">
+        <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="row footer-top-wrap">
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
@@ -159,60 +159,30 @@
 
                                 </div>
                             </div>
+                          
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">LEGAL</h4>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Legal Information</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Privacy Policy</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Report Abuse</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Terms of Service</a>
-                                        </li>
-                                    </ul>
+                                    <h4 class="text-white">Account</h4>
+                                    <a href="/services" class="btn secondary-solid-btn">Login</a>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">SUPPORT</h4>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Contact</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Knowledge Base</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Forums</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">System Status</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-md-3">
+<div class="col-md-3">
                         <div class="row footer-top-wrap">
                             <div class="col-12">
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>{{$siteinfo->address1}}</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>{{$siteinfo->email}}</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>{{$siteinfo->phone}}</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>Perinthalmanna</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>nikhilsasikumar1@gmail.co</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>9656676466</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        </div>
+                    </div>
+                     
                 </div>
             </div>
         </div>

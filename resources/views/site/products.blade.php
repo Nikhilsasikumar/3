@@ -31,7 +31,7 @@
                     <button type="button" class="filter-btn" data-mixitup-control data-filter=".other">Others</button>
                 </div> --}}
                 <div class="portfolio-container" id="MixItUp">
-                    @foreach($product as $pro)
+                    <!-- @foreach($product as $pro)
                     <div class="mix portfolio-item branding" data-ref="mixitup-target">
                         <div class="portfolio-wrapper">
                             <a href="product/{{$pro->id}}">
@@ -44,11 +44,46 @@
                             </a>
                         </div>
                     </div>
-                    @endforeach
-                   
+                    @endforeach -->
+                    <div class="row">
+                    @foreach($product as $pro)
+                <div class="col-md-4">
+                    <div class="staff-member">
+                        <div class="card gray-light-bg text-center border-0">
+                            <img src="/storage/product_photos/{{$pro->product_photo}}" alt="team image" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="teacher mb-0">{{$pro->product_name}}</h5>
+                                <span>Instructor of Mathematics</span>
+                                <ul class="list-inline pt-2 social">
+                                    <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
+                                    <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
+                                    <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overlay d-flex align-items-center justify-content-center">
+                            <div class="overlay-inner">
+                                <p class="teacher-quote">"Dramatically leverage existing fully researched platforms vis-a-vis viral." </p><a href="#" class="teacher-name">
+                                <h5 class="mb-0 teacher text-white">{{$pro->product_name}}</h5></a>
+                                <span class="teacher-field text-white">Instructor of Mathematics</span>
+                                <ul class="list-inline py-4 social">
+                                    <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-facebook"></span></a></li>
+                                    <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-linkedin"></span></a></li>
+                                    <li class="list-inline-item"><a href="#" target="_blank"><span class="ti-dribbble"></span></a></li>
+                                </ul>
+                                <p class="teacher-see-profile">
+                                    <a href="product/{{$pro->id}}" class="btn outline-white-btn">View Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            
+                    <!-- <div class="gap"></div>
                     <div class="gap"></div>
-                    <div class="gap"></div>
-                    <div class="gap"></div>
+                    <div class="gap"></div> -->
                 </div>
             </div>
         </div>

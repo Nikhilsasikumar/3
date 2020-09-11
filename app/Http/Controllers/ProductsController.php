@@ -52,8 +52,9 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = product::find($id);
+        $products = product::latest()->where('product_cate', $product->product_cate)->limit(5)->get();
         $siteinfo = siteinfo::latest()->first();
-        return view('site.product', ['product' => $product, 'siteinfo' => $siteinfo]);
+        return view('site.product', ['product' => $product, 'siteinfo' => $siteinfo,'products' => $products]);
     }
 
     /**
