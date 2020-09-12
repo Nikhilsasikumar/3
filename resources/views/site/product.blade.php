@@ -1,4 +1,5 @@
 @extends("site.app")
+@section("seo_title",$product->product_name)
 @section("page_title")
 <h1 class="text-white mb-0">{{$product->product_name}}</h1>
 <!-- <div class="custom-breadcrumb">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\service;
 use App\siteinfo;
-
+use App\product;
 class ServicesController extends Controller
 {
     /**
@@ -16,8 +16,10 @@ class ServicesController extends Controller
     public function index()
     {
         $service = service::latest()->paginate(9);
+        $product = product::latest()->limit(4)->get();
+        $lser = service::latest()->limit(4)->get();
         $siteinfo = siteinfo::latest()->first();
-        return view('site.services', ['service' => $service, 'siteinfo' => $siteinfo]);
+        return view('site.services', ['lser' => $lser,'service' => $service,'product' => $product, 'siteinfo' => $siteinfo]);
         // return $service;
     }
 
@@ -52,8 +54,10 @@ class ServicesController extends Controller
     {
 
         $service = service::find($id);
+        $product = product::latest()->limit(4)->get();
+        $lser = service::latest()->limit(4)->get();
         $siteinfo = siteinfo::latest()->first();
-        return view('site.service', ['service' => $service, 'siteinfo' => $siteinfo]);
+        return view('site.service', ['lser' => $lser,'service' => $service,'product' => $product, 'siteinfo' => $siteinfo]);
     }
 
     /**

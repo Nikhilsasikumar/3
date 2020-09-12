@@ -20,7 +20,7 @@
     <meta property="og:type" content="article" />
 
     <!--title-->
-    <title>FMC Boat</title>
+    <title>Boat FMC | @yield("seo_title")</title>
 
     <!--favicon icon-->
     <link rel="icon" href="/img/favicon.png" type="image/png" sizes="16x16">
@@ -112,8 +112,8 @@
     <!--body content wrap end-->
 
 
-    <!--footer section start-->
-    <footer class="footer-section">
+     <!--footer section start-->
+     <footer class="footer-section">
         <!--footer top start-->
         <div class="footer-top gradient-bg">
         <div class="container">
@@ -122,39 +122,25 @@
                         <div class="row footer-top-wrap">
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">QUICK LINKS</h4>
+                                    <h4 class="text-white">LEADING SERVICES</h4>
                                     <ul class="nav flex-column">
+                                    @foreach($lser as $lse)
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Make Appointment</a>
+                                         <a class="nav-link" href="service/{{$lse->id}}">{{$lse->service_name}}</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Department Services</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Our Case Studies</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Our Business Growth</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">COMPANY</h4>
+                                    <h4 class="text-white">TOP PRODUCTS</h4>
                                     <ul class="nav flex-column">
+                                        @foreach($product as $pro)
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">About Our Services</a>
+                                            <a class="nav-link" href="product/{{$pro->id}}">{{$pro->product_name}}</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Our Affiliates Program</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">View Our Blog</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Check Our Careers</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
 
                                 </div>
@@ -163,7 +149,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">Account</h4>
-                                    <a href="/services" class="btn secondary-solid-btn">Login</a>
+                                    <a href="/signin" class="btn secondary-solid-btn">Login</a>
                                 </div>
                             </div>
 <div class="col-md-3">
@@ -172,9 +158,9 @@
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>Perinthalmanna</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>nikhilsasikumar1@gmail.co</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>9656676466</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span><a href="{{$siteinfo->mapdirection}}">{{$siteinfo->address1}}</a></li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span><a href="mailto:{{$siteinfo->email}}">{{$siteinfo->email}}</a></li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span><a href="tel:{{$siteinfo->phone}}">{{$siteinfo->phone}}</a></li>
                                     </ul>
                                 </div>
                             </div>

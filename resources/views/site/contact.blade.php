@@ -1,4 +1,5 @@
 @extends("site.app")
+@section("seo_title","Contact Us | Our Phone number $siteinfo->phone and email $siteinfo->email ")
 @section("page_title")
 <h1 class="text-white mb-0">Contact Us</h1>
 <div class="custom-breadcrumb">
@@ -20,9 +21,9 @@
                         <div class="pb-2">
                             <span class="ti-mobile icon-sm color-secondary"></span>
                         </div>
-                        <div>
+                        <div><a href="tel:{{$siteinfo->phone}}">
                             <h5 class="mb-0">Call Us</h5>
-                            <p class="text-muted mb-0">{{$siteinfo->phone}}</p>
+                            <p class="text-muted mb-0">{{$siteinfo->phone}}</p></a>
                         </div>
                     </div>
                 </div>
@@ -34,9 +35,9 @@
                         <div class="pb-2">
                             <span class="ti-email icon-sm color-secondary"></span>
                         </div>
-                        <div>
+                        <div><a href="mailto:{{$siteinfo->email}}">
                             <h5 class="mb-0">Mail Us</h5>
-                            <p class="text-muted mb-0">{{$siteinfo->email}}</p>
+                            <p class="text-muted mb-0">{{$siteinfo->email}}</p></a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +111,7 @@
                        {{$siteinfo->address2}}
                     </address>
                     <br>
-                    <span>Phone: {{$siteinfo->phone}}</span> <br>
+                    <span>Phone:<a href="tel:{{$siteinfo->phone}}"> {{$siteinfo->phone}}</a></span> <br>
                     <span>Email: <a href="mailto:{{$siteinfo->email}}" class="link-color">{{$siteinfo->email}}</a></span>
 
                 </div>

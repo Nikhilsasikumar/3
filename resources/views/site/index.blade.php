@@ -8,7 +8,7 @@
 
     <!--  Meta description -->
     <meta name="description" content="" />
-    <meta name="author" content="DataCube Software (NIKHIL SASIKUMAR)" />
+    <meta name="author" content="DataCube Software Solutions Pvt.Ltd" />
     <meta property="og:site_name" content="FMC Boat" />
     <!-- website name -->
     <meta property="og:site" content="http://boatfmc.com" />
@@ -24,7 +24,7 @@
     <meta property="og:type" content="website" />
 
     <!--title-->
-    <title>CorporX Corporate and Business HTML Template</title>
+    <title>Boat FMC | Home</title>
 
     <!--favicon icon-->
     <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16" />
@@ -77,10 +77,10 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <span class="fas fa-envelope mr-1"></span>
-                                    <a href="mailto:{{$siteinfo->phone}}">{{$siteinfo->email}}</a>
+                                    <a href="mailto:{{$siteinfo->email}}">{{$siteinfo->email}}</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <span class="fas fa-map-marker mr-1"></span>{{$siteinfo->address1}}
+                                    <span class="fas fa-map-marker mr-1"></span><a href="{{$siteinfo->mapdirection}}" target="_blank">{{$siteinfo->address1}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -89,8 +89,8 @@
                         <div class="topbar-text text-white">
                             <ul class="list-inline text-md-right text-lg-right text-left">
                                 <li class="list-inline-item">
-                                    <span class="ti-phone mr-2"></span> Call Now:
-                                    <strong>{{$siteinfo->phone}}</strong>
+                                    <span class="ti-phone mr-2"></span> Call Now :
+                                    <strong><a href="tel:{{$siteinfo->phone}}">{{$siteinfo->phone}}</a></strong>
                                 </li>
                             </ul>
                         </div>
@@ -102,7 +102,7 @@
         <!--start navbar-->
         <nav class="navbar navbar-expand-lg fixed-top white-bg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <img src="img/fmc_color.png" alt="logo" class="img-fluid" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -219,6 +219,8 @@
                 </div> </div>
                 @endforeach
             </div>
+            <div style="text-align: center;">
+                <a href="/services" class="detail-link mt-3" style="font-size: x-large;">View More <span class="ti-arrow-right"></span></a></div>
             </div>
         </section>
         <!--services section end-->
@@ -330,39 +332,25 @@
                         <div class="row footer-top-wrap">
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">QUICK LINKS</h4>
+                                    <h4 class="text-white">LEADING SERVICES</h4>
                                     <ul class="nav flex-column">
+                                    @foreach($lser as $lse)
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Make Appointment</a>
+                                         <a class="nav-link" href="service/{{$lse->id}}">{{$lse->service_name}}</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Department Services</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Our Case Studies</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Our Business Growth</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
-                                    <h4 class="text-white">COMPANY</h4>
+                                    <h4 class="text-white">TOP PRODUCTS</h4>
                                     <ul class="nav flex-column">
+                                        @foreach($product as $pro)
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">About Our Services</a>
+                                            <a class="nav-link" href="product/{{$pro->id}}">{{$pro->product_name}}</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Our Affiliates Program</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">View Our Blog</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Check Our Careers</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
 
                                 </div>
@@ -371,7 +359,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">Account</h4>
-                                    <a href="/services" class="btn secondary-solid-btn">Login</a>
+                                    <a href="/signin" class="btn secondary-solid-btn">Login</a>
                                 </div>
                             </div>
 <div class="col-md-3">
@@ -380,9 +368,9 @@
                                 <div class="footer-nav-wrap text-white">
                                     <h4 class="text-white">GET IN TOUCH</h4>
                                     <ul class="get-in-touch-list">
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span>Perinthalmanna</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span>nikhilsasikumar1@gmail.co</li>
-                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span>9656676466</li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span><a href="{{$siteinfo->mapdirection}}">{{$siteinfo->address1}}</a></li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span><a href="mailto:{{$siteinfo->email}}">{{$siteinfo->email}}</a></li>
+                                        <li class="d-flex align-items-center py-2"><span class="fas fa-phone-alt mr-2"></span><a href="tel:{{$siteinfo->phone}}">{{$siteinfo->phone}}</a></li>
                                     </ul>
                                 </div>
                             </div>

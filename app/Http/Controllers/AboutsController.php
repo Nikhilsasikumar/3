@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\siteinfo;
-
+use App\service;
+use App\product;
 class AboutsController extends Controller
 {
     /**
@@ -15,7 +16,9 @@ class AboutsController extends Controller
     public function index()
     {
         $siteinfo = siteinfo::latest()->first();
-        return view('site.about', ['siteinfo' => $siteinfo]);
+        $product = product::latest()->limit(4)->get();
+        $lser = service::latest()->limit(4)->get();
+        return view('site.about', ['lser' => $lser,'product' => $product,'siteinfo' => $siteinfo]);
     }
 
     /**

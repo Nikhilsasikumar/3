@@ -1,4 +1,5 @@
 @extends("site.app")
+@section("seo_title","Products List")
 @section("page_title")
 <h1 class="text-white mb-0">Products</h1>
 <div class="custom-breadcrumb">

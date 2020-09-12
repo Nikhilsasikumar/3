@@ -1,4 +1,5 @@
 @extends("site.app")
+@section("seo_title",$service->service_name)
 @section("page_title")
 <h1 class="text-white mb-0">{{$service->service_name}}</h1>
 @endsection

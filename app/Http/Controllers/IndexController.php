@@ -18,8 +18,10 @@ class IndexController extends Controller
     {
         $product = product::latest()->limit(4)->get();
         $service = service::latest()->limit(6)->get();
+        $lser = service::latest()->limit(4)->get();
+        // return $ser;
         $siteinfo = siteinfo::latest()->first();
-        return view('site.index', ['service' => $service, 'product' => $product, 'siteinfo' => $siteinfo]);
+        return view('site.index', ['service' => $service, 'lser' => $lser,'product' => $product, 'siteinfo' => $siteinfo]);
     }
 
     /**
