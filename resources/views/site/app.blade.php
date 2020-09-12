@@ -70,7 +70,7 @@
         <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="/img/fmc_white.png" alt="logo" class="img-fluid" />
+                    <img src="/img/fmc_white.png" alt="logo" style="width: 200px;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="ti-menu"></span>

@@ -103,7 +103,7 @@
         <nav class="navbar navbar-expand-lg fixed-top white-bg">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="img/fmc_color.png" alt="logo" class="img-fluid" />
+                    <img src="img/fmc_color.png" alt="logo" class="" style="width: 200px;"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="ti-menu"></span>
@@ -207,9 +207,8 @@
               
                 <div class="row">
                 @foreach($service as $ser)
-                <div class="col-md-6 col-lg-4" style="
-    margin-bottom: 15px;">
-                    <div class="card single-promo-card single-promo-hover text-center shadow-sm">
+                <div class="col-md-6 col-lg-4" style="margin-bottom: 15px;">
+                    <div class="services-single card single-promo-card single-promo-hover text-center shadow-sm">
                     <div class="feature-feature-list p-4 text-center">
                         <span class="{{$ser->service_icon}} icon-sm d-block color-secondary mb-3"></span>
                         <h5 class="mb-2">{{$ser->service_name}}</h5>
@@ -233,9 +232,7 @@
                         <div class="section-heading text-center mb-5">
                             <h2><a href="/products">Check Our Tons of Products</a></h2>
                             <p class="lead">
-                                Dynamically pursue 
-                                process improvements. Intrinsicly develop end-to-end customer
-                                service without extensive data.
+                            The following are the Top Products provided by FMC Boat
                             </p>
                         </div>
                     </div>
@@ -256,7 +253,7 @@
                                             <h5 class="text-white mb-1">
                                                 {{$pro->product_name}}
                                             </h5>
-                                            <p>{{$pro->product_disc}}</p>
+                                            <p>{{$pro->product_disc,0,80}}</p>
                                             <span class="ti-arrow-right"></span>
                                         </div>
                                     </a>
